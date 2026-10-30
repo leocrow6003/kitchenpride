@@ -1,0 +1,2707 @@
+:root {
+  --ink: #183b32;
+  --deep: #102e27;
+  --cream: #f5f2eb;
+  --paper: #fffefa;
+  --orange: #ea7246;
+  --muted: #777c72;
+  --line: #e4e0d7;
+  --lime: #d8e79f;
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.wrap {
+  width: min(1240px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* 공통 상단 안내 및 메뉴 */
+
+.topline {
+  display: flex;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  background: var(--deep);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.topline span {
+  margin-right: 8px;
+  color: var(--lime);
+}
+
+.nav {
+  display: flex;
+  height: 84px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(24, 59, 50, .13);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  line-height: 0;
+}
+
+.logo img {
+  display: block;
+  width: 220px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.logo-mark {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 50% 50% 50% 8px;
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+}
+
+.nav-links {
+  display: flex;
+  gap: 38px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--orange);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nav-right .cta {
+  padding: 13px 18px;
+  border-radius: 4px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.menu {
+  display: none;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 25px;
+}
+
+/* 공통 버튼 및 섹션 제목 */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  display: inline-block;
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.button.dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.button.outline {
+  border: 1px solid #b9c0b7;
+}
+
+.button .arrow {
+  font-size: 17px;
+  line-height: 10px;
+}
+
+/* 메인 페이지 히어로 */
+
+.hero {
+  display: grid;
+  min-height: 612px;
+  grid-template-columns: 48% 52%;
+  align-items: center;
+  padding: 46px 0 58px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 20px 24px 20px 0;
+}
+
+.hero h1 {
+  margin: 26px 0 20px;
+  font-size: clamp(48px, 6.2vw, 82px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -.075em;
+}
+
+.hero h1 em,
+.section-head h2 em,
+.story-copy h2 em {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+.hero p {
+  max-width: 395px;
+  margin: 0 0 29px;
+  color: #69766e;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 55px;
+  color: #68756d;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.note-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid #c5cdc0;
+  border-radius: 50%;
+  color: var(--orange);
+  font-size: 15px;
+}
+
+.hero-visual {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 5px 80px 5px 5px;
+  background: #d1d0bd;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.76);
+}
+
+.hero-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 37, 30, .44), transparent 55%);
+  content: "";
+}
+
+.visual-label {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  left: 28px;
+  color: #fff;
+}
+
+.visual-label small {
+  display: block;
+  margin-bottom: 7px;
+  color: #e6edcf;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.visual-label strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.visual-index {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  right: 24px;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: .16em;
+}
+
+.stamp {
+  position: absolute;
+  z-index: 2;
+  top: 39px;
+  left: -32px;
+  display: grid;
+  width: 90px;
+  height: 90px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+  transform: rotate(-12deg);
+}
+
+/* 메인 페이지 신뢰 요소 */
+
+.trust {
+  border-block: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.trust-inner {
+  display: grid;
+  min-height: 95px;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  align-items: center;
+}
+
+.trust-lead {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.trust-lead small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.trust-item {
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.trust-item strong {
+  font-size: 17px;
+  letter-spacing: -.04em;
+}
+
+.trust-item span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* 메인 페이지 제품 카테고리 */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.section-head h2 {
+  margin: 13px 0 0;
+  font-size: 43px;
+  line-height: 1.17;
+  letter-spacing: -.065em;
+}
+
+.section-head p {
+  margin: 0 2px 4px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.category {
+  position: relative;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #deddd1;
+  color: #fff;
+}
+
+.category img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.82);
+  transition: transform .5s;
+}
+
+.category:hover img {
+  transform: scale(1.04);
+}
+
+.category::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 32, 26, .78), transparent 57%);
+  content: "";
+}
+
+.cat-top,
+.cat-bottom {
+  position: absolute;
+  z-index: 1;
+  right: 23px;
+  left: 23px;
+}
+
+.cat-top {
+  top: 22px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+
+.cat-top b {
+  color: #e3e9d7;
+  font-weight: 500;
+}
+
+.cat-bottom {
+  bottom: 24px;
+}
+
+.cat-bottom small {
+  color: #e2e9cd;
+  font-size: 10px;
+  letter-spacing: .16em;
+}
+
+.cat-bottom h3 {
+  margin: 7px 0 8px;
+  font-size: 25px;
+  letter-spacing: -.055em;
+}
+
+.cat-bottom p {
+  margin: 0;
+  color: #e3e9e2;
+  font-size: 11px;
+}
+
+.cat-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  font-size: 20px;
+}
+
+/* 메인 페이지 브랜드 소개 */
+
+.story {
+  overflow: hidden;
+  background: var(--deep);
+  color: #f8f4e9;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.story-image {
+  position: relative;
+  height: 495px;
+}
+
+.story-image img {
+  width: 86%;
+  height: 100%;
+  border-radius: 4px 70px 4px 4px;
+  object-fit: cover;
+  filter: saturate(.7);
+}
+
+.image-tag {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  width: 172px;
+  padding: 20px 22px;
+  background: var(--lime);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.25;
+  transform: rotate(2deg);
+}
+
+.story-copy .eyebrow {
+  color: var(--lime);
+}
+
+.story-copy h2 {
+  margin: 21px 0;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -.07em;
+}
+
+.story-copy > p {
+  max-width: 440px;
+  color: #c0ccc3;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 18px;
+  margin-top: 35px;
+  padding-top: 27px;
+  border-top: 1px solid #365147;
+}
+
+.value strong {
+  font-size: 13px;
+}
+
+.value span {
+  display: block;
+  margin-top: 6px;
+  color: #a8b9ac;
+  font-size: 10px;
+}
+
+/* 메인 페이지 문의 및 푸터 */
+
+.contact {
+  padding: 86px 0;
+  background: #e9e7dc;
+}
+
+.contact-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact h2 {
+  margin: 12px 0;
+  font-size: 39px;
+  line-height: 1.22;
+  letter-spacing: -.07em;
+}
+
+.contact p {
+  color: #66756b;
+  font-size: 12px;
+}
+
+.contact-card {
+  display: flex;
+  min-width: 330px;
+  align-items: center;
+  gap: 25px;
+  padding: 23px 27px;
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.contact-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f8e8de;
+  color: var(--orange);
+  font-size: 18px;
+}
+
+.contact-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.contact-card strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 20px;
+  letter-spacing: .02em;
+}
+
+.contact-card .button {
+  margin-left: auto;
+  padding: 13px;
+}
+
+.main-contact-card {
+  display: grid;
+  grid-template-columns: 44px minmax(180px, 1fr) auto;
+  align-items: start;
+  min-width: 480px;
+}
+
+.main-contact-details address {
+  margin-top: 10px;
+  color: #58645c;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 1.65;
+}
+
+.main-mobile-number { display: block; margin-top: 6px; color: #496c9d; font-size: 11px; font-weight: 700; }
+
+.main-contact-details iframe {
+  display: block;
+  width: 100%;
+  max-width: 235px;
+  height: 105px;
+  margin-top: 9px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.main-contact-details .map-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: #496c9d;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-announcement { width: min(1040px, calc(100vw - 28px)); max-width: none; max-height: calc(100dvh - 24px); padding: clamp(14px, 2.2vw, 25px); overflow: auto; border: 0; border-radius: 14px; background: #fffefa; color: var(--ink); box-shadow: 0 24px 90px rgba(0,0,0,.32); }
+.home-announcement::backdrop { background: rgba(16,20,18,.76); backdrop-filter: blur(3px); }
+.home-announcement-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.home-announcement-head .eyebrow { color: #a83e36; }
+.home-announcement-head h2 { margin: 6px 0 0; font-size: clamp(18px, 2.4vw, 25px); letter-spacing: -.045em; }
+.announcement-close { display: grid; flex: 0 0 36px; width: 36px; height: 36px; place-items: center; border: 0; border-radius: 50%; background: #f0eee9; color: #333; font-size: 26px; line-height: 1; cursor: pointer; }
+.announcement-images { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); align-items: center; gap: 14px; }
+.announcement-images a { display: flex; min-width: 0; align-items: center; justify-content: center; overflow: hidden; background: #f5f4f1; }
+.announcement-images img { display: block; width: 100%; height: auto; max-height: min(66vh, 690px); object-fit: contain; }
+.home-announcement-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 14px; color: #74766f; font-size: 10px; }
+.home-announcement-foot .button { padding: 10px 16px; }
+
+.footer {
+  padding: 52px 0 25px;
+  background: var(--deep);
+  color: var(--cream);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 37px;
+  border-bottom: 1px solid #314a40;
+}
+
+.footer .logo {
+  font-size: 20px;
+}
+
+.footer .logo-mark {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.footer .logo img {
+  width: 210px;
+  height: 68px;
+  padding: 3px;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  color: #d0d9d1;
+  font-size: 11px;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.footer-social-links svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  padding-top: 21px;
+  color: #91a399;
+  font-size: 10px;
+}
+
+.business-footer-info p {
+  margin: 4px 0;
+  line-height: 1.8;
+}
+
+.business-footer-info a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #50675d;
+  text-underline-offset: 2px;
+}
+
+.business-footer-info a:hover,
+.business-footer-info a:focus-visible {
+  color: #fff;
+}
+
+.nav-right > a:not(.cta) {
+  color: inherit;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.footer-bottom strong {
+  color: #e9eee9;
+  font-weight: 500;
+}
+
+/* History 페이지 제목과 탭 */
+
+.history-hero {
+  padding: 56px 0 0;
+}
+
+.history-kicker {
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.history-title {
+  margin: 18px 0 17px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -.075em;
+}
+
+.history-title em {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+.history-intro {
+  max-width: 690px;
+  color: #69766e;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.era-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.era-tab {
+  padding: 19px 14px 17px;
+  border: 0;
+  border-top: 3px solid transparent;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: background .2s, border-color .2s;
+}
+
+.era-tab:hover,
+.era-tab[aria-selected="true"] {
+  border-top-color: var(--orange);
+  background: #f6f3eb;
+}
+
+.era-tab:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -3px;
+}
+
+.era-tab small {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.era-tab strong {
+  font-size: 16px;
+  letter-spacing: -.04em;
+}
+
+/* History 사진: 가로 폭에 맞추고 원본 비율을 유지해 전체 표시 */
+
+.history-visual {
+  position: relative;
+  height: auto;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 5px 60px 5px 5px;
+  background: #d2d0c5;
+}
+
+.history-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* History 설명: 사진 바로 다음에 가깝게 배치 */
+
+.history-timeline {
+  padding: 10px 0 80px;
+  border-block: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.timeline-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.timeline-head h2 {
+  margin: 12px 0 0;
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -.07em;
+}
+
+.timeline-head p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.era-panel {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.era-panel[hidden] {
+  display: none;
+}
+
+.era-number {
+  color: #d7ddce;
+  font-family: var(--serif);
+  font-size: clamp(54px, 8vw, 100px);
+  line-height: .95;
+  letter-spacing: -.08em;
+}
+
+.era-copy h3 {
+  margin: 0 0 12px;
+  font-size: clamp(25px, 3vw, 34px);
+  letter-spacing: -.06em;
+}
+
+.era-company {
+  margin-bottom: 18px;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.era-copy > p {
+  max-width: 720px;
+  margin: 0;
+  color: #66736a;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.milestones {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.milestone {
+  min-height: 118px;
+  padding: 16px 14px;
+  border-top: 2px solid var(--ink);
+  background: #f4f2eb;
+}
+
+.milestone b {
+  color: var(--orange);
+  font-size: 10px;
+  letter-spacing: .06em;
+}
+
+.milestone p {
+  margin: 9px 0 0;
+  color: #5f6a62;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* History 하단 상담 연결 */
+
+.history-cta {
+  position: relative;
+  isolation: isolate;
+  padding: 72px 0;
+  background: linear-gradient(90deg, rgba(24, 28, 26, .82), rgba(24, 28, 26, .38)), url("assets/kitchenpride_shop.jpg") center 58% / cover no-repeat;
+  color: #fff;
+}
+
+.history-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.history-cta h2 {
+  margin: 0;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -.065em;
+}
+
+.history-cta p {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, .86);
+  font-size: 12px;
+}
+
+.history-cta .button {
+  flex: none;
+}
+
+/* 스크롤 등장 효과 */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 태블릿 */
+
+@media (max-width: 850px) {
+  .wrap {
+    width: min(calc(100% - 40px), 620px);
+  }
+
+  .nav {
+    height: 70px;
+  }
+
+  .nav-links,
+  .nav-right {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 42px 0 45px;
+  }
+
+  .hero-copy {
+    padding: 0;
+  }
+
+  .hero h1 {
+    margin: 20px 0;
+    font-size: 61px;
+  }
+
+  .hero-note {
+    margin-top: 30px;
+  }
+
+  .hero-visual {
+    height: 390px;
+  }
+
+  .stamp {
+    top: -28px;
+    right: 24px;
+    left: auto;
+  }
+
+  .trust-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .trust-item {
+    padding: 0;
+    border: 0;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-head h2 {
+    font-size: 36px;
+  }
+
+  .section-head p {
+    max-width: 180px;
+  }
+
+  .categories {
+    gap: 10px;
+  }
+
+  .category {
+    height: 300px;
+  }
+
+  .cat-top,
+  .cat-bottom {
+    right: 15px;
+    left: 15px;
+  }
+
+  .cat-bottom h3 {
+    font-size: 21px;
+  }
+
+  .story-grid {
+    gap: 35px;
+  }
+
+  .story-image {
+    height: 400px;
+  }
+
+  .story-copy h2 {
+    font-size: 38px;
+  }
+
+  .contact-inner {
+    gap: 25px;
+  }
+
+  .contact-card {
+    min-width: 285px;
+    padding: 18px;
+  }
+
+  .main-contact-card {
+    min-width: 0;
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .main-contact-card .button {
+    grid-column: 2;
+    justify-self: start;
+    margin: 8px 0 0;
+  }
+
+  .footer-links {
+    gap: 14px;
+  }
+
+  .timeline-head {
+    display: block;
+  }
+
+  .timeline-head p {
+    margin-top: 15px;
+  }
+
+  .era-panel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .era-number {
+    font-size: 48px;
+  }
+
+  .milestones {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .milestone:last-child {
+    grid-column: span 2;
+  }
+
+  .history-timeline {
+    padding: 8px 0 56px;
+  }
+
+  .history-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* 모바일 */
+
+@media (max-width: 600px) {
+  .wrap {
+    width: calc(100% - 36px);
+  }
+
+  .topline {
+    font-size: 9px;
+  }
+
+  .logo img {
+    width: 185px;
+    height: 60px;
+  }
+
+  .hero h1 {
+    font-size: 53px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero-visual {
+    height: 340px;
+    border-top-right-radius: 55px;
+  }
+
+  .trust-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-lead {
+    grid-column: 1 / -1;
+  }
+
+  .trust-item strong {
+    font-size: 15px;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head p {
+    max-width: 280px;
+    margin-top: 15px;
+  }
+
+  .section-head h2 {
+    font-size: 35px;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  .category {
+    height: 330px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .story-image {
+    height: 350px;
+  }
+
+  .story-image img {
+    width: 90%;
+  }
+
+  .story-copy h2 {
+    font-size: 39px;
+  }
+
+  .contact {
+    padding: 65px 0;
+  }
+
+  .contact-inner {
+    display: block;
+  }
+
+  .contact h2 {
+    font-size: 34px;
+  }
+
+  .contact-card {
+    min-width: 0;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .main-contact-card {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .main-contact-details iframe {
+    max-width: 100%;
+  }
+
+  .main-contact-card .button {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .contact-card strong {
+    font-size: 17px;
+  }
+
+  .contact-card .button {
+    gap: 7px;
+    padding: 12px;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    display: block;
+  }
+
+  .footer .logo img {
+    width: 180px;
+    height: 58px;
+  }
+
+  .footer-social-links {
+    margin-top: 16px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 25px;
+  }
+
+  .footer-bottom span {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .history-hero {
+    padding-top: 42px;
+  }
+
+  .history-title {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .era-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 22px;
+  }
+
+  .era-tab {
+    padding: 14px 10px;
+  }
+
+  .era-tab strong {
+    font-size: 14px;
+  }
+
+  .history-visual {
+    margin-top: 14px;
+    border-top-right-radius: 42px;
+  }
+
+  .history-timeline {
+    padding-top: 8px;
+  }
+
+  .history-cta {
+    padding: 55px 0;
+  }
+}
+
+/* 움직임 줄이기 설정 */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+/* History: keep the selected era description close to its photo. */
+.history-timeline .timeline-head {
+  display: none;
+}
+
+/* Expand the mobile navigation below the header when its button is opened. */
+@media (max-width: 850px) {
+  .nav {
+    position: relative;
+    z-index: 5;
+  }
+
+  .nav.is-open .nav-links {
+    position: absolute;
+    z-index: 6;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 18px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 12px 24px rgba(16, 46, 39, .12);
+  }
+
+  .nav.is-open .nav-links a {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav.is-open .nav-links a:last-child {
+    border-bottom: 0;
+  }
+}
+/* 업소용 냉장고 카테고리 페이지 */
+.fridge-hero {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 84px);
+  padding-top: 58px;
+  padding-bottom: 72px;
+}
+
+.fridge-copy h1 {
+  margin: 23px 0 20px;
+  font-size: clamp(42px, 5.5vw, 70px);
+  line-height: 1.13;
+  letter-spacing: -.075em;
+}
+
+.fridge-copy h1 em {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+.fridge-copy > p {
+  max-width: 470px;
+  margin: 0;
+  color: #69766e;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.fridge-copy .actions {
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+
+.fridge-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 34px;
+  color: #68756d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.fridge-hero-visual {
+  position: relative;
+  min-width: 0;
+  height: clamp(340px, 42vw, 500px);
+  overflow: hidden;
+  margin: 0;
+  border-radius: 5px 76px 5px 5px;
+  background: #deddd1;
+}
+
+.fridge-hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fridge-hero-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(12, 37, 30, .66), transparent 58%);
+  content: "";
+}
+
+.fridge-hero-visual figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  bottom: 25px;
+  left: 28px;
+  color: #fff;
+}
+
+.fridge-hero-visual figcaption small {
+  display: block;
+  margin-bottom: 8px;
+  color: #e6edcf;
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+
+.fridge-hero-visual figcaption strong {
+  font-size: clamp(17px, 2vw, 22px);
+  letter-spacing: -.04em;
+}
+
+.fridge-intro-band {
+  padding: 44px 0;
+  border-block: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.fridge-intro-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.fridge-overline,
+.product-index {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.fridge-intro-inner h2 {
+  margin: 12px 0 0;
+  font-size: clamp(28px, 3.5vw, 40px);
+  line-height: 1.25;
+  letter-spacing: -.065em;
+}
+
+.fridge-intro-inner > p {
+  max-width: 540px;
+  margin: 0;
+  color: #69766e;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.fridge-products {
+  padding-top: 88px;
+  padding-bottom: 94px;
+}
+
+.fridge-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.fridge-section-head h2 {
+  margin: 13px 0 0;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -.07em;
+}
+
+.fridge-section-head > p {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.fridge-product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 380px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 5px 55px 5px 5px;
+  background: var(--paper);
+}
+
+.fridge-product-image {
+  min-height: 330px;
+  background: #e7e5db;
+}
+
+.fridge-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  object-fit: cover;
+}
+
+.fridge-product-copy {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: clamp(25px, 5vw, 64px);
+}
+
+.fridge-product-copy h3 {
+  margin: 14px 0 12px;
+  font-size: clamp(27px, 3.5vw, 40px);
+  letter-spacing: -.065em;
+}
+
+.fridge-product-copy > p {
+  max-width: 440px;
+  margin: 0;
+  color: #69766e;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 24px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.fridge-considerations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.fridge-considerations > div {
+  padding: 21px 22px;
+  border-top: 1px solid #bfc8bc;
+}
+
+.fridge-considerations span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--orange);
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.fridge-considerations strong {
+  font-size: 14px;
+}
+
+.fridge-considerations p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.fridge-contact {
+  scroll-margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+  .fridge-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 42px;
+    padding-bottom: 48px;
+  }
+
+  .fridge-copy > p {
+    max-width: 620px;
+  }
+
+  .fridge-hero-visual {
+    height: 390px;
+  }
+
+  .fridge-intro-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .fridge-products {
+    padding-top: 68px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fridge-hero {
+    padding-top: 36px;
+  }
+
+  .fridge-copy h1 {
+    font-size: clamp(40px, 11vw, 54px);
+  }
+
+  .fridge-hero-visual {
+    height: 320px;
+    border-top-right-radius: 52px;
+  }
+
+  .fridge-intro-band {
+    padding: 32px 0;
+  }
+
+  .fridge-section-head {
+    display: block;
+  }
+
+  .fridge-section-head > p {
+    margin-top: 14px;
+  }
+
+  .fridge-product-card {
+    grid-template-columns: 1fr;
+    border-top-right-radius: 42px;
+  }
+
+  .fridge-product-image,
+  .fridge-product-image img {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .fridge-product-copy {
+    padding: 27px 22px 30px;
+  }
+
+  .fridge-considerations {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .fridge-considerations > div {
+    padding: 17px 14px;
+  }
+}
+/* EVERZEN commercial refrigerator catalog */
+.everzen-page {
+  --everzen-blue: #1769b2;
+  --everzen-blue-dark: #174a7d;
+  --everzen-pale: #edf4f8;
+}
+
+.everzen-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 82px);
+  padding-top: 62px;
+  padding-bottom: 68px;
+}
+
+.everzen-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  color: var(--everzen-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.everzen-dots {
+  display: grid;
+  grid-template-columns: repeat(2, 7px);
+  gap: 3px;
+}
+
+.everzen-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--everzen-blue);
+}
+
+.everzen-dots i:nth-child(3) {
+  background: transparent;
+  border: 1px solid var(--everzen-blue);
+}
+
+.everzen-hero .eyebrow,
+.everzen-eyebrow {
+  color: var(--everzen-blue);
+}
+
+.everzen-hero-copy h1 {
+  margin: 19px 0 18px;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -.075em;
+}
+
+.everzen-hero-copy h1 em {
+  color: var(--everzen-blue-dark);
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+.everzen-hero-copy > p {
+  max-width: 530px;
+  margin: 0;
+  color: #68756e;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.everzen-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 25px;
+}
+
+.everzen-page .button.dark {
+  background: var(--everzen-blue-dark);
+}
+
+.everzen-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 27px;
+}
+
+.everzen-tags span {
+  padding: 8px 11px;
+  border: 1px solid #d5e1eb;
+  border-radius: 2px;
+  color: #4e6575;
+  font-size: 10px;
+}
+
+.everzen-hero-image {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  height: clamp(350px, 42vw, 500px);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 4px 72px 4px 4px;
+  background: #f0f2ef;
+}
+
+.everzen-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  object-fit: contain;
+}
+
+.everzen-hero-image figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 17px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #566a78;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.everzen-hero-image figcaption span {
+  color: var(--everzen-blue);
+}
+
+.everzen-model-nav {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  border-block: 1px solid #dce5ec;
+  background: rgba(255, 254, 250, .96);
+  backdrop-filter: blur(10px);
+}
+
+.everzen-model-nav .wrap {
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 70px);
+}
+
+.everzen-model-nav a {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  gap: 9px;
+  color: var(--everzen-blue-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.everzen-model-nav a span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.everzen-models {
+  padding-top: 82px;
+  padding-bottom: 94px;
+}
+
+.everzen-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.everzen-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.everzen-section-heading h2 {
+  margin: 11px 0 0;
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -.07em;
+}
+
+.everzen-section-heading > p {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.everzen-model-card {
+  display: grid;
+  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+  align-items: stretch;
+  gap: clamp(28px, 5vw, 64px);
+  margin-top: 24px;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid #dfe6e9;
+  border-radius: 4px 42px 4px 4px;
+  background: var(--paper);
+  scroll-margin-top: 82px;
+}
+
+.everzen-model-card-reverse .everzen-model-photo {
+  order: 2;
+}
+
+.everzen-model-photo {
+  display: flex;
+  min-height: 330px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f4f4f0;
+}
+
+.everzen-model-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 430px;
+  object-fit: contain;
+}
+
+.everzen-model-info {
+  align-self: center;
+  min-width: 0;
+  padding: 12px 0;
+}
+
+.everzen-model-kicker {
+  color: var(--everzen-blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.everzen-model-info h3 {
+  margin: 9px 0 8px;
+  font-size: clamp(26px, 3vw, 36px);
+  letter-spacing: -.065em;
+}
+
+.everzen-model-desc {
+  margin: 0 0 20px;
+  color: #68756e;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.spec-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #d9e1e6;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  text-align: left;
+}
+
+.spec-table thead {
+  background: var(--everzen-blue);
+  color: #fff;
+}
+
+.spec-table th,
+.spec-table td {
+  min-width: 72px;
+  padding: 11px 12px;
+  border-bottom: 1px solid #e2e7e9;
+  white-space: nowrap;
+}
+
+.spec-table thead th {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.spec-table tbody th {
+  color: #273b4a;
+  font-weight: 700;
+}
+
+.spec-table tbody tr:last-child th,
+.spec-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.spec-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 18px;
+  margin: 16px 0 0;
+}
+
+.spec-facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e9e7;
+  font-size: 10px;
+}
+
+.spec-facts dt {
+  color: var(--muted);
+}
+
+.spec-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 700;
+  text-align: right;
+}
+
+.everzen-option-card {
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) 1.1fr;
+  align-items: center;
+  gap: clamp(25px, 5vw, 60px);
+  margin-top: 26px;
+  padding: clamp(22px, 4vw, 42px);
+  background: var(--everzen-pale);
+  scroll-margin-top: 82px;
+}
+
+.everzen-option-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.everzen-option-copy h3 {
+  margin: 10px 0 12px;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -.06em;
+}
+
+.everzen-option-copy p,
+.everzen-option-copy li {
+  color: #566b78;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.everzen-option-copy ul {
+  margin: 15px 0 0;
+  padding-left: 18px;
+}
+
+.everzen-dimensions {
+  margin-top: 86px;
+  scroll-margin-top: 82px;
+}
+
+.everzen-dimensions .everzen-section-heading {
+  margin-bottom: 22px;
+}
+
+.dimensions-table th:first-child {
+  width: 100px;
+}
+
+.everzen-contact {
+  scroll-margin-top: 20px;
+}
+
+/* Commercial fryer series page */
+.fryer-page { --fryer-accent: #c44426; --fryer-dark: #282824; }
+.fryer-hero { display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr); align-items: center; gap: clamp(35px, 6vw, 82px); padding-top: 60px; padding-bottom: 70px; }
+.fryer-hero-copy h1 { margin: 18px 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.16; letter-spacing: -.075em; }
+.fryer-hero-copy h1 em { color: var(--fryer-accent); font-family: var(--serif); font-weight: 400; }
+.fryer-brand-title { display: flex; align-items: center; gap: 9px; }
+.fryer-brand-title img { width: 27px; height: 27px; object-fit: contain; }
+.fryer-hero-copy > p { max-width: 500px; margin: 0; color: #68756e; font-size: 13px; line-height: 1.95; }
+.fryer-hero-copy .button { margin-top: 24px; }
+.fryer-page .button.dark { background: var(--fryer-dark); }
+.fryer-hero-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 27px; }
+.fryer-hero-tags span { padding: 7px 9px; border: 1px solid #e5ddd5; color: #655a52; font-size: 9px; font-weight: 700; letter-spacing: .08em; }
+.fryer-hero-visual { position: relative; display: flex; min-width: 0; min-height: 320px; align-items: center; justify-content: center; overflow: hidden; margin: 0; background: #111827; }
+.fryer-hero-visual img { display: block; width: 100%; height: auto; }
+.fryer-hero-visual figcaption { position: absolute; right: 18px; bottom: 15px; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-shadow: 0 1px 8px #000; }
+.fryer-series-nav { position: sticky; z-index: 3; top: 0; border-block: 1px solid #e5e0dc; background: rgba(255, 254, 250, .96); backdrop-filter: blur(10px); }
+.fryer-series-nav .wrap { display: flex; justify-content: center; gap: clamp(22px, 5vw, 68px); }
+.fryer-series-nav a { display: flex; min-height: 58px; align-items: center; color: #3f413e; font-size: 12px; font-weight: 700; }
+.fryer-series-nav a:hover, .fryer-series-nav a:focus-visible { color: var(--fryer-accent); }
+.fryer-series { padding-top: 82px; padding-bottom: 92px; }
+.fryer-section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+.fryer-section-head h2 { margin: 11px 0 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.25; letter-spacing: -.07em; }
+.fryer-section-head > p { margin: 0 0 4px; color: var(--muted); font-size: 11px; line-height: 1.85; }
+.fryer-series-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(250px, .8fr); align-items: center; gap: 28px 44px; margin-top: 28px; padding: clamp(18px, 3vw, 30px); border: 1px solid #e6e2dd; background: #fffefa; scroll-margin-top: 72px; }
+.fryer-series-image { display: flex; min-height: 240px; align-items: center; overflow: hidden; background: #f3f4f1; }
+.fryer-series-image img { display: block; width: 100%; height: auto; }
+.fryer-series-copy { padding: 15px 8px; }
+.fryer-index { color: var(--fryer-accent); font-size: 10px; font-weight: 800; letter-spacing: .13em; }
+.fryer-series-copy h3 { margin: 11px 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: -.06em; }
+.fryer-series-copy h3.fryer-series-title { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.fryer-series-title img { display: block; width: auto; max-width: 170px; height: 36px; object-fit: contain; object-position: left center; mix-blend-mode: multiply; }
+.fryer-series-title .fryer-eco-wordmark { color: var(--fryer-accent); font-size: 15px; font-weight: 800; letter-spacing: .12em; }
+.fryer-series-copy p { margin: 0; color: #68756e; font-size: 12px; line-height: 1.9; }
+.fryer-series-copy .text-link { margin-top: 18px; }
+.fryer-product-gallery { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.fryer-product-gallery-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fryer-product-gallery img { display: block; width: 100%; height: 270px; object-fit: contain; background: #f4f4f1; }
+.fryer-series-card-reverse .fryer-series-image { order: 2; }
+.fryer-series-card-reverse .fryer-series-copy { order: 1; }
+.fryer-series-card-reverse .fryer-product-gallery { order: 3; }
+.fryer-contact { scroll-margin-top: 20px; }
+
+/* Kitchenware catalog page */
+.kitchenware-page { --kitchenware-accent: #a83e36; --kitchenware-ink: #292b27; }
+.kitchenware-hero { display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr); align-items: center; gap: clamp(35px, 6vw, 82px); padding-top: 60px; padding-bottom: 70px; }
+.kitchenware-hero-copy h1 { margin: 18px 0; font-size: clamp(40px, 5vw, 62px); line-height: 1.18; letter-spacing: -.075em; }
+.kitchenware-hero-copy h1 em { color: var(--kitchenware-accent); font-family: var(--serif); font-weight: 400; }
+.kitchenware-hero-copy > p { max-width: 490px; margin: 0; color: #68756e; font-size: 13px; line-height: 1.95; }
+.kitchenware-hero-copy .actions { margin-top: 24px; }
+.kitchenware-service-points { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+.kitchenware-service-points span { padding: 8px 10px; border: 1px solid #e5ddd5; color: #655a52; font-size: 10px; font-weight: 700; }
+.kitchenware-hero-visual { position: relative; display: flex; min-width: 0; align-items: center; overflow: hidden; margin: 0; background: #ddd9d3; }
+.kitchenware-hero-visual img { display: block; width: 100%; height: auto; }
+.kitchenware-hero-visual figcaption { position: absolute; right: 16px; bottom: 14px; color: white; font-size: 8px; font-weight: 700; letter-spacing: .1em; text-shadow: 0 1px 8px #222; }
+.kitchenware-social-row { display: flex; justify-content: center; gap: 14px; padding: 0 0 25px; }
+.kitchenware-social-row > a { display: flex; min-width: 245px; align-items: center; gap: 12px; padding: 12px 17px; border-radius: 10px; color: #fff; box-shadow: 0 7px 18px rgba(24,30,25,.13); transition: transform .2s ease, filter .2s ease; }
+.kitchenware-social-row > a:hover { filter: brightness(1.06); transform: translateY(-2px); }
+.kitchenware-social-row svg { flex: 0 0 32px; width: 32px; height: 32px; color: #fff; }
+.kitchenware-social-row span { display: flex; flex-direction: column; gap: 3px; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
+.kitchenware-social-row b { font-size: 12px; letter-spacing: 0; }
+.kitchenware-new-products { padding-top: 70px; padding-bottom: 60px; }
+.kitchenware-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.kitchenware-product-card { overflow: hidden; border: 1px solid #e6e2dd; background: #fffefa; }
+.kitchenware-product-card-wide { grid-column: span 2; }
+.kitchenware-product-card img { display: block; width: 100%; height: 265px; padding: 12px; object-fit: contain; background: #f7f7f4; }
+.kitchenware-product-card div { padding: 13px 16px 16px; }
+.kitchenware-product-card span { color: #8a8c84; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
+.kitchenware-product-card h3 { margin: 6px 0 0; font-size: 14px; letter-spacing: -.035em; }
+.kitchenware-product-card-wide img { height: 285px; }
+.kitchenware-new-products .kitchenware-section-head { margin-bottom: 24px; }
+.kitchenware-nav { position: sticky; z-index: 3; top: 0; border-block: 1px solid #e5e0dc; background: rgba(255, 254, 250, .96); backdrop-filter: blur(10px); }
+.kitchenware-nav .wrap { display: flex; justify-content: center; gap: clamp(18px, 4vw, 52px); }
+.kitchenware-nav a { display: flex; min-height: 58px; align-items: center; color: #3f413e; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.kitchenware-nav a:hover, .kitchenware-nav a:focus-visible { color: var(--kitchenware-accent); }
+.kitchenware-catalog { padding-top: 82px; padding-bottom: 88px; scroll-margin-top: 68px; }
+.kitchenware-section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+.kitchenware-section-head h2 { margin: 11px 0 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.25; letter-spacing: -.07em; }
+.kitchenware-section-head > p { margin: 0 0 4px; color: var(--muted); font-size: 11px; line-height: 1.9; }
+.kitchenware-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.kitchenware-group { display: grid; grid-template-columns: 42px 1fr; gap: 14px; min-height: 205px; padding: 24px; border: 1px solid #e6e2dd; background: #fffefa; scroll-margin-top: 78px; }
+.kitchenware-group-wide { grid-column: 1 / -1; min-height: 160px; }
+.kitchenware-group-number { color: var(--kitchenware-accent); font-family: var(--serif); font-size: 27px; }
+.kitchenware-group-en { color: #8a8c84; font-size: 9px; font-weight: 800; letter-spacing: .14em; }
+.kitchenware-group h3 { margin: 7px 0 13px; font-size: 20px; letter-spacing: -.05em; }
+.kitchenware-products { margin: 0; color: #68756e; font-size: 11px; line-height: 2.05; }
+.kitchenware-catalog-note { display: flex; align-items: center; gap: 22px; margin-top: 20px; padding: 22px 25px; background: #f1eee8; }
+.kitchenware-catalog-note .eyebrow { flex: 0 0 auto; color: var(--kitchenware-accent); }
+.kitchenware-catalog-note p { flex: 1; margin: 0; color: #565a53; font-size: 12px; line-height: 1.8; }
+.kitchenware-catalog-note .text-link { flex: 0 0 auto; }
+.kitchenware-social { padding: 64px 0; background: #282824; color: #fffefa; }
+.kitchenware-social-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+.kitchenware-social .eyebrow { color: #d8a59a; }
+.kitchenware-social h2 { margin: 13px 0; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.3; letter-spacing: -.06em; }
+.kitchenware-social p { margin: 0; color: #d1d0c9; font-size: 11px; line-height: 1.8; }
+.kitchenware-social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kitchenware-social-links a { display: grid; grid-template-columns: 48px 1fr; grid-template-rows: 1fr 1fr; align-items: center; gap: 3px 13px; min-height: 116px; padding: 17px; border: 0; border-radius: 12px; color: #fff; box-shadow: 0 8px 22px rgba(0,0,0,.15); transition: transform .2s ease, filter .2s ease; }
+.kitchenware-social-links a:hover { filter: brightness(1.06); transform: translateY(-3px); }
+.kitchenware-social-facebook { background: #0866ff; }
+.kitchenware-social-naver { background: #03c75a; }
+.kitchenware-social-links .social-brand-icon { grid-row: 1 / 3; display: block; width: 48px; height: 48px; }
+.kitchenware-social-links span { align-self: end; color: rgba(255,255,255,.86); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.kitchenware-social-links strong { align-self: start; font-size: 13px; }
+.kitchenware-social-links strong b { margin-left: 4px; font-weight: 800; }
+.footer-social-links { display: flex; align-items: center; gap: 8px; }
+.footer-social-links a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border-radius: 7px; color: #fff; font-size: 9px; font-weight: 700; }
+.footer-social-links svg { display: block; width: 17px; height: 17px; color: #fff; }
+.kitchenware-contact { scroll-margin-top: 20px; }
+@media (max-width: 850px) {
+  .kitchenware-hero { grid-template-columns: 1fr; gap: 28px; padding-top: 42px; padding-bottom: 48px; }
+  .kitchenware-section-head { display: block; }
+  .kitchenware-section-head > p { margin-top: 13px; }
+  .kitchenware-social-inner { grid-template-columns: 1fr; gap: 25px; }
+}
+@media (max-width: 600px) {
+  .home-announcement { width: calc(100vw - 18px); max-height: calc(100dvh - 18px); padding: 12px; border-radius: 10px; }
+  .announcement-images { grid-template-columns: 1fr; gap: 10px; }
+  .announcement-images img { max-height: 47vh; }
+  .home-announcement-foot { align-items: flex-end; font-size: 9px; }
+  .footer-social-links { margin: 16px 0 20px; }
+  .kitchenware-hero-copy h1 { font-size: clamp(38px, 10vw, 52px); }
+  .kitchenware-social-row { justify-content: stretch; gap: 8px; padding-bottom: 20px; }
+  .kitchenware-social-row > a { flex: 1; min-width: 0; gap: 8px; padding: 10px; }
+  .kitchenware-social-row svg { flex-basis: 26px; width: 26px; height: 26px; }
+  .kitchenware-social-row b { font-size: 10px; }
+  .kitchenware-nav .wrap { justify-content: flex-start; gap: 24px; overflow-x: auto; }
+  .kitchenware-catalog { padding-top: 52px; padding-bottom: 60px; }
+  .kitchenware-groups { grid-template-columns: 1fr; }
+  .kitchenware-group-wide { grid-column: auto; }
+  .kitchenware-group { min-height: 0; padding: 19px; }
+  .kitchenware-new-products { padding-top: 50px; padding-bottom: 40px; }
+  .kitchenware-product-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+  .kitchenware-product-card-wide { grid-column: span 2; }
+  .kitchenware-product-card img, .kitchenware-product-card-wide img { height: 190px; padding: 8px; }
+  .kitchenware-product-card div { padding: 11px; }
+  .kitchenware-product-card h3 { font-size: 12px; }
+  .kitchenware-catalog-note { align-items: flex-start; flex-direction: column; gap: 10px; padding: 20px; }
+  .kitchenware-social { padding: 48px 0; }
+  .kitchenware-social-links { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 850px) {
+  .fryer-hero { grid-template-columns: 1fr; gap: 28px; padding-top: 42px; padding-bottom: 48px; }
+  .fryer-hero-visual { min-height: 0; }
+  .fryer-series-card { grid-template-columns: 1fr; gap: 18px; }
+  .fryer-series-card-reverse .fryer-series-image, .fryer-series-card-reverse .fryer-series-copy { order: initial; }
+}
+
+@media (max-width: 600px) {
+  .fryer-hero-copy h1 { font-size: clamp(38px, 10vw, 52px); }
+  .fryer-series-nav .wrap { justify-content: flex-start; gap: 24px; overflow-x: auto; }
+  .fryer-series-nav a { flex: 0 0 auto; }
+  .fryer-series { padding-top: 52px; padding-bottom: 60px; }
+  .fryer-section-head { display: block; }
+  .fryer-section-head > p { margin-top: 13px; }
+  .fryer-series-card { margin-top: 18px; padding: 14px; }
+  .fryer-series-image { min-height: 0; }
+  .fryer-product-gallery, .fryer-product-gallery-two { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .fryer-product-gallery img { height: 190px; }
+}
+
+@media (max-width: 850px) {
+  .everzen-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 42px;
+    padding-bottom: 48px;
+  }
+
+  .everzen-hero-image {
+    height: 380px;
+  }
+
+  .everzen-models {
+    padding-top: 60px;
+  }
+
+  .everzen-model-card,
+  .everzen-option-card {
+    grid-template-columns: 1fr;
+  }
+
+  .everzen-model-card-reverse .everzen-model-photo {
+    order: 0;
+  }
+
+  .everzen-model-photo {
+    min-height: 290px;
+  }
+
+  .everzen-model-photo img {
+    max-height: 390px;
+  }
+}
+
+@media (max-width: 600px) {
+  .everzen-hero {
+    padding-top: 35px;
+    padding-bottom: 38px;
+  }
+
+  .everzen-brand {
+    margin-bottom: 22px;
+  }
+
+  .everzen-hero-copy h1 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .everzen-hero-image {
+    height: 310px;
+    border-top-right-radius: 46px;
+  }
+
+  .everzen-hero-image figcaption {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .everzen-model-nav .wrap {
+    justify-content: flex-start;
+    gap: 22px;
+    overflow-x: auto;
+  }
+
+  .everzen-model-nav a {
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3px;
+    font-size: 11px;
+  }
+
+  .everzen-models {
+    padding-top: 48px;
+    padding-bottom: 58px;
+  }
+
+  .everzen-section-heading {
+    display: block;
+  }
+
+  .everzen-section-heading > p {
+    margin-top: 12px;
+  }
+
+  .everzen-model-card,
+  .everzen-option-card {
+    gap: 18px;
+    margin-top: 18px;
+    padding: 16px;
+    border-top-right-radius: 30px;
+  }
+
+  .everzen-model-photo {
+    min-height: 240px;
+  }
+
+  .everzen-model-info {
+    padding: 4px 0 0;
+  }
+
+  .spec-table {
+    min-width: 560px;
+  }
+
+  .spec-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .everzen-option-image {
+    margin: -5px;
+  }
+
+  .everzen-dimensions {
+    margin-top: 58px;
+  }
+}
+/* Refrigerator model detail pages and direct model links */
+.model-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--everzen-blue-dark, #174a7d);
+  text-decoration: underline;
+  text-decoration-color: #b9ccda;
+  text-underline-offset: 3px;
+}
+
+.model-detail-link:hover,
+.model-detail-link:focus-visible {
+  color: var(--everzen-blue, #1769b2);
+  text-decoration-color: currentColor;
+}
+
+.model-detail-link span {
+  font-size: 10px;
+}
+
+.everzen-model-photo,
+.everzen-option-image {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.everzen-model-photo:hover img,
+.everzen-option-image:hover img {
+  transform: scale(1.025);
+}
+
+.everzen-model-photo img,
+.everzen-option-image img {
+  transition: transform .25s ease;
+}
+
+.everzen-model-photo:focus-visible,
+.everzen-option-image:focus-visible {
+  outline: 3px solid var(--everzen-blue, #1769b2);
+  outline-offset: 3px;
+}
+
+.refrigerator-detail {
+  padding-top: 30px;
+  padding-bottom: 72px;
+}
+
+.detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.detail-breadcrumb a:hover {
+  color: var(--everzen-blue, #1769b2);
+}
+
+.detail-sheet {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.detail-sheet[hidden] {
+  display: none;
+}
+
+.detail-sheet-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 0 24px;
+}
+
+.detail-sheet-heading h1 {
+  margin: 8px 0 2px;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -.06em;
+}
+
+.detail-sheet-heading p {
+  margin: 0;
+  color: var(--everzen-blue, #1769b2);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.detail-sheet > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.detail-product-photo {
+  max-width: 980px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+
+.detail-product-photo[hidden] {
+  display: none;
+}
+
+.detail-product-photo img {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.refrigerator-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, .95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: clamp(35px, 6vw, 78px);
+}
+
+.refrigerator-detail-grid[hidden] {
+  display: none;
+}
+
+.refrigerator-detail-photo {
+  position: sticky;
+  top: 25px;
+  display: flex;
+  min-height: 480px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 4px 62px 4px 4px;
+  background: #f1f2ee;
+}
+
+.refrigerator-detail-photo img {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.refrigerator-detail-copy {
+  min-width: 0;
+  padding: 10px 0;
+}
+
+.refrigerator-detail-copy .everzen-brand {
+  margin-bottom: 27px;
+}
+
+.refrigerator-detail-copy h1 {
+  margin: 10px 0 3px;
+  font-size: clamp(30px, 4vw, 45px);
+  letter-spacing: -.065em;
+}
+
+.detail-model-code {
+  margin: 0 0 14px;
+  color: var(--everzen-blue, #1769b2);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.detail-description,
+.detail-note {
+  color: #68756e;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.detail-spec-wrap {
+  margin-top: 22px;
+  border: 1px solid #d9e1e6;
+}
+
+.detail-spec-wrap .spec-table th {
+  width: 35%;
+  background: #f2f6f8;
+  color: #314b5e;
+}
+
+.detail-spec-wrap .spec-table td {
+  white-space: normal;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+.detail-note {
+  margin-top: 17px;
+  font-size: 10px;
+}
+
+.detail-door-option {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 35px;
+  margin-top: 50px;
+  padding: 28px;
+  background: var(--everzen-pale, #edf4f8);
+  scroll-margin-top: 30px;
+}
+
+.detail-door-option[hidden],
+.detail-not-found[hidden] {
+  display: none;
+}
+
+.detail-door-option h2,
+.detail-not-found h1 {
+  margin: 10px 0;
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: -.06em;
+}
+
+.detail-door-option p,
+.detail-not-found p {
+  color: #566b78;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.detail-door-option img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.detail-not-found {
+  min-height: 380px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+@media (max-width: 850px) {
+  .refrigerator-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .refrigerator-detail-photo {
+    position: static;
+    min-height: 340px;
+  }
+
+  .refrigerator-detail-photo img {
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 600px) {
+  .refrigerator-detail {
+    padding-top: 20px;
+    padding-bottom: 52px;
+  }
+
+  .refrigerator-detail-photo {
+    min-height: 270px;
+    border-top-right-radius: 42px;
+  }
+
+  .refrigerator-detail-copy .everzen-brand {
+    margin-bottom: 20px;
+  }
+
+  .detail-door-option {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 32px;
+    padding: 18px;
+  }
+}
+
+.nav-links .nav-naver-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: -24px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: #03c75a;
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.nav-links .nav-naver-link:hover {
+  background: #02b351;
+  color: #fff !important;
+}
+
+.nav-links .nav-naver-link span {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Shared Korean / English / Vietnamese selector */
+.language-control { display: flex; align-items: center; margin-left: -22px; }
+.language-control select { min-height: 36px; padding: 0 28px 0 10px; border: 1px solid #d9d7d1; border-radius: 4px; background: #fffefa; color: #343630; font: 700 11px "DM Sans", "Noto Sans KR", sans-serif; cursor: pointer; }
+.language-control select:focus-visible { outline: 2px solid #a83e36; outline-offset: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+
+@media (max-width: 850px) {
+  .nav.is-open .language-control { margin: 10px 0 14px; }
+  .nav.is-open .language-control select { min-height: 40px; }
+  .nav.is-open .nav-links .nav-naver-link {
+    align-self: flex-start;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border: 0;
+  }
+}
+
+
+
+
