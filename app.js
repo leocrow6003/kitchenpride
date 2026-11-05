@@ -273,20 +273,6 @@ if (detailRoot) {
   }
 }
 
-// Show the two promotional posters when the home page is opened.
-const homeAnnouncement = document.querySelector("#home-announcement");
-
-if (homeAnnouncement && typeof homeAnnouncement.showModal === "function") {
-  homeAnnouncement.showModal();
-
-  homeAnnouncement.querySelectorAll("[data-announcement-close]").forEach(button => {
-    button.addEventListener("click", () => homeAnnouncement.close());
-  });
-
-  homeAnnouncement.addEventListener("click", event => {
-    if (event.target === homeAnnouncement) homeAnnouncement.close();
-  });
-}
 
 // Site-wide Korean / English / Vietnamese language switcher.
 (() => {
@@ -502,58 +488,50 @@ if (homeAnnouncement && typeof homeAnnouncement.showModal === "function") {
 // ========================================
 // 홈페이지 팝업: 오늘 하루 안 보기
 // ========================================
-
 (() => {
-    const popup = document.getElementById('home-announcement');
+  const popup = document.getElementById("home-announcement");
+  if (!popup || typeof popup.showModal !== "function") return;
 
-    if (!popup) return;
+  const checkbox = document.getElementById("announcement-hide-today");
+  const storageKey = "kitchenpride_popup_hidden_date";
 
-    const checkbox = document.getElementById(
-        'announcement-hide-today'
-    );
+  const today = () => {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, "0");
+    const dd = String(now.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  };
 
-    const STORAGE_KEY = 'kitchenpride_popup_hidden_date';
-
-    // 사용자의 현지 날짜 (YYYY-MM-DD)
-    function getToday() {
-        const now = new Date();
-
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-
-        return `${year}-${month}-${day}`;
+  const hiddenToday = () => {
+    try {
+      return localStorage.getItem(storageKey) === today();
+    } catch (error) {
+      return false;
     }
+  };
 
-    // 오늘 이미 숨김 처리했는지 확인
-    function isHiddenToday() {
-        return localStorage.getItem(STORAGE_KEY) === getToday();
+  const closePopup = () => {
+    if (checkbox && checkbox.checked) {
+      try {
+        localStorage.setItem(storageKey, today());
+      } catch (error) {
+        // 저장이 차단된 브라우저에서는 이번 표시만 닫습니다.
+      }
     }
+    if (popup.open) popup.close();
+  };
 
-    // 오늘 숨김 상태라면 팝업 표시 방지
-    const originalShowModal = popup.showModal.bind(popup);
+  popup.querySelectorAll("[data-announcement-close]").forEach(button => {
+    button.addEventListener("click", closePopup);
+  });
 
-    popup.showModal = function () {
-        if (isHiddenToday()) return;
-        originalShowModal();
-    };
+  popup.addEventListener("click", event => {
+    if (event.target === popup) closePopup();
+  });
 
-    // 팝업 닫기 버튼 처리
-    popup.querySelectorAll('[data-announcement-close]')
-        .forEach(button => {
-            button.addEventListener('click', () => {
-
-                if (checkbox && checkbox.checked) {
-                    localStorage.setItem(
-                        STORAGE_KEY,
-                        getToday()
-                    );
-                }
-
-                popup.close();
-            });
-        });
-
+  // 오늘 숨김 기록이 없을 때만 팝업 표시
+  if (!hiddenToday()) popup.showModal();
 })();
 
 // ========================================
