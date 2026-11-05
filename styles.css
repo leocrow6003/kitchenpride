@@ -565,6 +565,23 @@ button {
   justify-content: space-between;
 }
 
+/* 메인 페이지 문의 영역 왼쪽 냉장고 사진 크기 조정 */
+.contact-photo {
+  flex: 0 1 280px;
+  width: min(26%, 280px);
+  max-width: 280px;
+  min-width: 0;
+  margin: 0 22px;
+}
+
+.contact-photo img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  object-position: center;
+}
+
 .contact h2 {
   margin: 12px 0;
   font-size: 39px;
@@ -1246,6 +1263,16 @@ button {
 
   .contact-inner {
     display: block;
+  }
+
+  .contact-photo {
+    width: 100%;
+    max-width: 320px;
+    margin: 24px auto;
+  }
+
+  .contact-photo img {
+    height: 190px;
   }
 
   .contact h2 {
