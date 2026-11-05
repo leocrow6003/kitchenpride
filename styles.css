@@ -565,21 +565,24 @@ button {
   justify-content: space-between;
 }
 
-/* 메인 페이지 문의 영역 왼쪽 냉장고 사진 크기 조정 */
-.contact-photo {
-  flex: 0 1 280px;
-  width: min(26%, 280px);
-  max-width: 280px;
-  min-width: 0;
-  margin: 0 22px;
+/* 메인 페이지 문의 영역: 연락처 왼쪽 냉장고 사진 크기 고정 */
+.contact-inner > .contact-photo {
+  flex: 0 0 260px !important;
+  width: 260px !important;
+  max-width: 260px !important;
+  min-width: 0 !important;
+  margin: 0 18px !important;
+  overflow: hidden;
 }
 
-.contact-photo img {
-  display: block;
-  width: 100%;
-  height: 210px;
-  object-fit: contain;
-  object-position: center;
+.contact-inner > .contact-photo > img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 260px !important;
+  height: 190px !important;
+  max-height: 190px !important;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
 .contact h2 {
@@ -1265,14 +1268,17 @@ button {
     display: block;
   }
 
-  .contact-photo {
-    width: 100%;
-    max-width: 320px;
-    margin: 24px auto;
+  .contact-inner > .contact-photo {
+    width: min(100%, 300px) !important;
+    max-width: 300px !important;
+    margin: 24px auto !important;
   }
 
-  .contact-photo img {
-    height: 190px;
+  .contact-inner > .contact-photo > img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 180px !important;
+    max-height: 180px !important;
   }
 
   .contact h2 {
