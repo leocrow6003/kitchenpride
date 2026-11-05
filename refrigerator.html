@@ -10,6 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .table-fridge-section{margin:52px 0 58px;padding:30px;background:#fffefa;border:1px solid #e6e2dd;border-radius:8px}
+    .table-fridge-heading h2{margin:0 0 22px;font-size:clamp(24px,3vw,32px);letter-spacing:-.06em}
+    .table-fridge-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .table-fridge-card{min-width:0;margin:0;overflow:hidden;border:1px solid #e6e2dd;background:#fff}
+    .table-fridge-card img{display:block;width:100%;aspect-ratio:1.3;padding:8px;object-fit:contain;background:#f7f7f4}
+    .table-fridge-card figcaption{padding:10px 8px;color:#30322e;font-size:13px;font-weight:700;text-align:center}
+    @media(max-width:850px){.table-fridge-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:600px){.table-fridge-section{margin:32px 0 40px;padding:16px}.table-fridge-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.table-fridge-card figcaption{font-size:11px}}
+  </style>
+
 </head>
 <body>
   <div class="topline"><span>●</span> 매일의 주방을 더 든든하게, 키친프라이드</div>
@@ -28,20 +39,35 @@
   <main class="everzen-page">
     <section class="wrap everzen-hero">
       <div class="everzen-hero-copy">
-        <div class="everzen-brand"><span class="everzen-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>EVERZEN · INDIRECT COOLING</div>
+        <img src="assets/poseko_logo.png" alt="사이트 로고" width="350">
+        <div class="everzen-brand"><span class="everzen-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>POSEKO · INDIRECT COOLING</div>
         <div class="eyebrow">Commercial refrigeration</div>
-        <h1>필요한 구성으로 선택하는<br><em>간접냉각 냉장고</em></h1>
-        <p>에버젠 간접냉각방식 냉장고의 BOX별 구성과 모델 정보를 카탈로그 기준으로 정리했습니다. 냉장·냉동 조합, 도어 형태와 설치 치수를 비교해 보세요.</p>
+        <h1>필요한 구성으로 선택<br><em>직접냉각 냉장고</em></h1>
+        <p> 냉장·냉동 조합, 도어 형태와 설치 치수를 비교해 보세요.</p>
         <div class="everzen-hero-actions"><a class="button dark" href="#models">모델 살펴보기 <span class="arrow">↓</span></a><a class="button outline" href="#contact">제품 상담</a></div>
-        <div class="everzen-tags"><span>간접냉각방식</span><span>냉장·냉동 조합</span><span>양문형 옵션</span></div>
+        <div class="everzen-tags"><span>직접냉각방식</span><span>냉장·냉동 조합</span><span>양문형 옵션</span></div>
       </div>
-      <figure class="everzen-hero-image"><img src="assets/everzen-45box.jpg" alt="에버젠 간접냉각방식 45BOX 업소용 냉장고"><figcaption>EVERZEN REACH-IN SERIES <span>25 / 45 / 65 BOX</span></figcaption></figure>
+      <figure class="everzen-hero-image"><img src="assets/everzen-45box.jpg" alt="45BOX 업소용 냉장고"><figcaption>POSEKO REACH-IN SERIES <span>25 / 45 / 65 BOX</span></figcaption></figure>
     </section>
 
-    <nav class="everzen-model-nav" aria-label="냉장고 모델 바로가기"><div class="wrap"><a href="#model-25">25BOX <span>양문형</span></a><a href="#model-45">45BOX <span>냉장·냉동 조합</span></a><a href="#model-65">65BOX <span>대용량</span></a><a href="#glass-door">GLASS DOOR <span>도어 옵션</span></a></div></nav>
+    <style>
+  /* 기본 메뉴 글자 크기 조정 */
+  .everzen-model-nav .wrap a {
+    font-size: 16px; /* 원하는 크기로 변경하세요 (예: 14px, 18px, 1rem 등) */
+  }
+
+  /* 괄호 안의 작은 설명 글자(span) 크기 조정 */
+  .everzen-model-nav .wrap a span {
+    font-size: 12px; /* 기본 글자보다 작게 설정할 때 유용합니다 */
+  }
+</style>
+    <nav class="everzen-model-nav" aria-label="냉장고 모델 바로가기"><div class="wrap"><a href="#model-25">25BOX <span>양문형</span></a><a href="#model-45">45BOX <span>냉장·냉동 조합</span></a>
+    <a href="#model-65">65BOX <span>대용량</span></a>
+    <a href="#glass-door">GLASS DOOR <span>도어 옵션</span></a>
+    <a href="#table-fridge">반찬 냉장고</a><a href="#aging-fridge">숙성 냉장고</a><a href="#showcase-title">음료 냉장고</a></div></nav>
 
     <section class="wrap everzen-models" id="models">
-      <header class="everzen-section-heading"><div><span class="everzen-eyebrow">Product lineup</span><h2>모델별 사양</h2></div><p>사양은 제공해 주신 EVERZEN 카탈로그를 기준으로 옮겼습니다.<br>모델별 구성을 확인한 뒤 상담을 요청해 주세요.</p></header>
+      <header class="everzen-section-heading"><div><span class="everzen-eyebrow">Product lineup</span><h2>모델별 사양</h2></div><img src="assets/poseko_logo.png" alt="POSEKO 로고" width="400" height="auto"><p><br>모델별 구성을 확인한 뒤 상담을 요청해 주세요.</p></header>
 
       <article class="everzen-model-card" id="model-25">
         <a class="everzen-model-photo" href="refrigerator-detail.html?model=UDS-25FIE-2D" aria-label="UDS-25FIE-2D 상세 보기"><img src="assets/everzen-25box.jpg" alt="에버젠 25BOX 양문형 냉장고"></a>
@@ -57,7 +83,7 @@
       </article>
 
       <article class="everzen-model-card everzen-model-card-reverse" id="model-45">
-        <a class="everzen-model-photo" href="refrigerator-detail.html?model=UDS-45RFIE" aria-label="UDS-45RFIE 상세 보기"><img src="assets/everzen-45box.jpg" alt="에버젠 45BOX 간접냉각방식 업소용 냉장고"></a>
+        <a class="everzen-model-photo" href="refrigerator-detail.html?model=UDS-45RFIE" aria-label="UDS-45RFIE 상세 보기"><img src="assets/everzen-45box.jpg" alt="포스코 45BOX 직접냉각방식 업소용 냉장고"></a>
         <div class="everzen-model-info">
           <div class="everzen-model-kicker">INDIRECT COOLING · 4 CONFIGURATIONS</div><h3>45BOX</h3>
           <p class="everzen-model-desc">냉장·냉동 용량 조합에 따라 네 가지 모델을 선택할 수 있습니다.</p>
@@ -72,7 +98,7 @@
       </article>
 
       <article class="everzen-model-card" id="model-65">
-        <a class="everzen-model-photo" href="refrigerator-detail.html?model=UDS-65RIE-2D" aria-label="UDS-65RIE-2D 상세 보기"><img src="assets/everzen-65box.jpg" alt="에버젠 65BOX 간접냉각방식 스테인리스 도어 냉장고"></a>
+        <a class="everzen-model-photo" href="refrigerator-detail.html?model=UDS-65RFIE" aria-label="UDS-65RIE-2D 상세 보기"><img src="assets/everzen-65box.jpg" alt="포스코 65BOX 직접냉각방식 스테인리스 도어 냉장고"></a>
         <div class="everzen-model-info">
           <div class="everzen-model-kicker">INDIRECT COOLING · LARGE CAPACITY</div><h3>65BOX 양문형</h3>
           <p class="everzen-model-desc">넉넉한 수납 구성이 필요한 전문 주방을 위한 대용량 모델입니다.</p>
@@ -88,20 +114,98 @@
         <a class="everzen-option-image" href="refrigerator-detail.html?model=UDS-65RIE-2D&amp;variant=glass#door-options" aria-label="65BOX 글라스 도어 옵션 상세 보기"><img src="assets/everzen-65box-glass.jpg" alt="에버젠 65BOX 글라스 도어 냉장고"></a>
         <div class="everzen-option-copy"><span class="everzen-eyebrow">Door options</span><h3>65BOX 글라스 도어</h3><p>제품 확인이 편리한 글라스 도어. 필요에 따라 글라스 도어 또는 스테인리스 도어를 선택하세요, 냉동 부분의 글라스 도어 선택은 불가.</p><ul><li>외형 크기: 1,900 × 800 × 1,900 mm</li><li>중량: 199 kg</li><li>전원: AC 220 V / 55/60 Hz 겸용</li></ul></div>     </article>
 
-      <section class="everzen-dimensions" aria-labelledby="dimensions-title">
-        <div class="everzen-section-heading"><div><span class="everzen-eyebrow">Installation reference</span><h2 id="dimensions-title">설치 치수 참고</h2></div><p>간접냉각방식 카탈로그의 냉장고 입구·도어·선반 치수입니다.<br>현장 설치 전 실제 공간을 함께 확인해 주세요.</p></div>
-        <div class="spec-table-wrap"><table class="spec-table dimensions-table"><thead><tr><th>BOX</th><th>입구 사이즈</th><th>도어 사이즈</th><th>선반 사이즈</th></tr></thead><tbody>
-          <tr><th>25BOX</th><td>520 × 660 mm</td><td>622 × 735 mm</td><td>540 × 410 mm</td></tr>
-          <tr><th>30BOX</th><td>710 × 660 mm</td><td>820 × 735 mm</td><td>736 × 500 mm</td></tr>
-          <tr><th>45BOX</th><td>520 × 660 mm</td><td>607 × 735 mm</td><td>540 × 410 mm · 565 × 630 mm</td></tr>
-        </tbody></table></div>
+
+      <section class="table-fridge-section" id="table-fridge" aria-labelledby="table-fridge-title">
+        <div class="table-fridge-heading"><span class="everzen-eyebrow">TABLE REFRIGERATOR LINEUP</span><h2 id="table-fridge-title">테이블 냉장고</h2></div>
+        <div class="table-fridge-grid">
+          <figure class="table-fridge-card"><img src="https://www.webstaurantstore.com/images/products/large/624536/2221837.jpg" alt="테이블 냉장고 36 inch" loading="lazy"><figcaption>36 inch</figcaption></figure>
+          
+          <figure class="table-fridge-card"><img src="https://www.kitchenall.com/media/catalog/product/cache/5f3b820ff14764e2e3a1ef6174359edf/u/c/uc-48rt-front_1.jpg" alt="테이블 냉장고 48 inch" loading="lazy"><figcaption>48 inch</figcaption></figure>
+          <figure class="table-fridge-card"><img src="https://www.webstaurantstore.com/images/products/extra_large/503458/1873726.jpg" alt="테이블 냉장고 60 inch" loading="lazy"><figcaption>60 inch</figcaption></figure>
+          
+          <figure class="table-fridge-card"><img src="https://www.vortexrestaurantequipment.ca/cdn/shop/files/Centerline-CLUC-36R-SD-WT-Undercounter-Refrigerator.jpg?v=1757413320" alt="테이블 냉장고 36 inch" loading="lazy"><figcaption>36 inch</figcaption></figure>
+          <figure class="table-fridge-card"><img src="https://admin.blueairfse.com/imgs/products/900max/66333f02453cd13-BLUR%28F%2936-HC.png?v=18122025" alt="테이블 냉장고 36 inch" loading="lazy"><figcaption>36 inch</figcaption></figure>
+          <figure class="table-fridge-card"><img src="https://cdnimg.webstaurantstore.com/images/products/xxl/520533/1961262.jpg" alt="테이블 냉장고 48 inch" loading="lazy"><figcaption>48 inch</figcaption></figure>
+          <figure class="table-fridge-card"><img src="https://www.toprestaurantsupplies.com/cdn/shop/files/coldline-undercounter-refrigerator-freezer-default-title-coldline-uc-72r-72-undercounter-work-top-refrigerator-15-5-cu-ft-41131670765884_700x700.jpg?v=1695977433" alt="테이블 냉장고 72 inch" loading="lazy"><figcaption>72 inch</figcaption></figure>
+          <figure class="table-fridge-card"><img src="https://cdn11.bigcommerce.com/s-ay2mt0vs/images/stencil/original/products/537/2469/LWRT-3B-1800__41268.1770943493.jpg" alt="테이블 냉장고 1800 mm" loading="lazy"><figcaption>1800 mm</figcaption></figure>
+          <figure class="table-fridge-card"><img src="https://www.pepebar.com/7860/bajo-mostrador-frigorifico-3-puertas-368l-fimar-g-s903top.jpg" alt="테이블 냉장고 1800 mm" loading="lazy"><figcaption>1800 mm</figcaption></figure><img src="assets/poseko_logo.png" alt="사이트 로고" width="600" height="auto">
+        </div>
       </section>
-    </section>
+      
+      <img src="assets/mega_08.jpg" alt="mega8">
+
+      <section class="everzen-dimensions"
+         id="topping-fridge"
+         aria-labelledby="dimensions-title">
+        <div class="everzen-section-heading"><div><span class="everzen-eyebrow">Installation reference</span><h2 id="dimensions-title">토핑 테이블 냉장고</h2></div><p>직접냉각방식<br>현장 설치 전 실제 공간을 함께 확인해 주세요.</p></div>
+        <div class="spec-table-wrap"><table class="spec-table dimensions-table"><thead><tr><th>TOPPING TABLE</th><th></th><th></th><th></th></tr></thead><tbody>
+
+        </tbody></table></div>
+        <figure class="everzen-topping-reference"><img src="assets/topping_table.jpg" alt="업소용 냉장고 토핑 테이블 제품 및 설치 참고"></figure>
+
+        <!-- 추가 냉장고 제품 이미지 -->
+
+      </section>
+    </section> 
+
+    <section class="everzen-dimensions"
+         id="aging-fridge"
+         aria-labelledby="aging-fridge-title">
+
+  <div class="everzen-section-heading">
+    <div>
+      <span class="everzen-eyebrow">AGING REFRIGERATOR</span>
+      <h2 id="aging-fridge-title">숙성 냉장고</h2>
+    </div>
+    <p>전문 주방을 위한 숙성 냉장고</p>
+  </div>
+
+  <figure class="everzen-topping-reference">
+    <img src="assets/ref1.jpg"
+         alt="숙성 냉장고"
+         loading="lazy">
+  </figure>
+
+     <section class="poseko-dimensions"
+         id="show-fridge"
+         aria-labelledby="show-fridge-title">
+
+  <div class="everzen-section-heading">
+    <div>
+      <span class="everzen-show">SHOW case REFRIGERATOR</span>
+      <h2 id="showcase-title">음료 냉장고 ' 쇼케이스</h2>
+    </div>
+    <p>음료 쇼케이스</p>
+  </div>
+
+  <figure class="everzen-topping-reference">
+    <img src="assets/ber1.jpg"
+         alt="쇼케이스"
+         loading="lazy">
+  </figure>
+
+</section>
 
     <section class="contact everzen-contact" id="contact"><div class="wrap contact-inner"><div><div class="eyebrow">Let's talk refrigeration</div><h2>설치 공간과 필요한 구성을<br>함께 살펴보겠습니다.</h2><p>원하시는 모델이나 주방 환경을 알려주시면 안내해 드립니다.</p></div><div class="contact-card"><div class="contact-icon">✆</div><div><small>Office · Vietnam</small><strong>0242 123 8009</strong></div><a class="button dark" href="tel:02421238009">전화하기 <span>↗</span></a></div></div></section>
   </main>
 
   <footer class="footer"><div class="wrap"><div class="footer-top"><a class="logo" href="index.html#home" aria-label="키친프라이드 홈"><img src="assets/kitchenpride-horizontal-new.png" alt="키친프라이드 SINCE 1962"></a><div class="footer-links"><a href="index.html#products">제품 카테고리</a><a href="history.html">브랜드 이야기</a><a href="#contact">문의하기</a></div></div><div class="footer-bottom"><div class="business-footer-info"><p><strong>KITCHEN PRIDE · 대표 나이권</strong></p><p>Office: <a href="tel:02421238009">0242 123 8009</a>　|　Mobile: <a href="tel:0901701079">090 170 1079</a> · <a href="tel:0986480220">098 648 0220</a></p><p>Address: 33 Vuon Cam, Phuong Tu Liem, Ha Noi</p><p><a href="mailto:kitchenpride@naver.com">kitchenpride@naver.com</a>　·　KakaoTalk ID: nayikwon45　·　<a href="https://kitchen-pride.com">kitchen-pride.com</a></p></div><span>© 2026 KITCHENPRIDE. ALL RIGHTS RESERVED.</span></div></div></footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.table-fridge-section');
+      if (!section) return;
+      const grid = section.querySelector('.table-fridge-grid');
+      const removeUnavailableCard = (img) => {
+        const card = img.closest('.table-fridge-card');
+        if (card) card.remove();
+        if (grid && !grid.querySelector('.table-fridge-card')) section.remove();
+      };
+      section.querySelectorAll('.table-fridge-card img').forEach((img) => {
+        img.addEventListener('error', () => removeUnavailableCard(img), { once: true });
+        if (img.complete && img.naturalWidth === 0) removeUnavailableCard(img);
+      });
+    });
+  </script>
   <script src="app.js" defer></script>
 </body>
 </html>

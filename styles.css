@@ -631,7 +631,14 @@ button {
   line-height: 1.65;
 }
 
-.main-mobile-number { display: block; margin-top: 6px; color: #496c9d; font-size: 11px; font-weight: 700; }
+.main-mobile-number {
+  display: block;
+  margin-top: 8px;
+  color: #496c9d;       /* 기존 브랜드 블루 컬러 유지 */
+  font-size: 22px;      /* 원하는 크기에 맞게 숫자를 조절하세요 (예: 20px, 24px) */
+  font-weight: 800;     /* 글자를 조금 더 두껍고 선명하게 변경 */
+  letter-spacing: 0.02em; /* 숫자 간격 조절 */
+}
 
 .main-contact-details iframe {
   display: block;
@@ -2093,6 +2100,19 @@ button {
   width: 100px;
 }
 
+.everzen-topping-reference {
+  width: 100%;
+  max-width: 900px;
+  margin: 32px auto 0;
+}
+
+.everzen-topping-reference img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .everzen-contact {
   scroll-margin-top: 20px;
 }
@@ -2114,7 +2134,7 @@ button {
 .fryer-hero-visual figcaption { position: absolute; right: 18px; bottom: 15px; color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-shadow: 0 1px 8px #000; }
 .fryer-series-nav { position: sticky; z-index: 3; top: 0; border-block: 1px solid #e5e0dc; background: rgba(255, 254, 250, .96); backdrop-filter: blur(10px); }
 .fryer-series-nav .wrap { display: flex; justify-content: center; gap: clamp(22px, 5vw, 68px); }
-.fryer-series-nav a { display: flex; min-height: 58px; align-items: center; color: #3f413e; font-size: 12px; font-weight: 700; }
+.fryer-series-nav a { display: flex; min-height: 58px; align-items: center; color: #3f413e; font-size: 18px; font-weight: 700; }
 .fryer-series-nav a:hover, .fryer-series-nav a:focus-visible { color: var(--fryer-accent); }
 .fryer-series { padding-top: 82px; padding-bottom: 92px; }
 .fryer-section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
@@ -2134,6 +2154,17 @@ button {
 .fryer-product-gallery { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .fryer-product-gallery-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .fryer-product-gallery img { display: block; width: 100%; height: 270px; object-fit: contain; background: #f4f4f1; }
+.fryer-model-grid { display: grid; grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding-top: 8px; border-top: 1px solid #e6e2dd; }
+.fryer-model-spec { min-width: 0; padding: 12px; border: 1px solid #e6e2dd; background: #fff; }
+.fryer-model-spec h4 { margin: 0 0 8px; color: var(--fryer-dark); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .015em; }
+.fryer-model-spec table { width: 100%; border-collapse: collapse; font-size: 10px; line-height: 1.45; }
+.fryer-model-spec th, .fryer-model-spec td { padding: 7px 6px; border: 1px solid #e7e5e1; text-align: left; }
+.fryer-model-spec th { width: 43%; color: #68756e; background: #f6f5f1; font-weight: 700; }
+.fryer-model-spec th small { color: #85877f; font-size: 8px; font-weight: 500; }
+.fryer-model-spec td { color: #30322e; font-weight: 700; white-space: nowrap; }
+.fryer-extra-models { scroll-margin-top: 72px; margin-top: 28px; padding: clamp(18px, 3vw, 30px); border: 1px solid #e6e2dd; background: #fffefa; }
+.fryer-extra-models > h3 { margin: 0 0 18px; font-size: 21px; letter-spacing: -.04em; }
+.fryer-extra-models .fryer-model-grid { padding-top: 0; border-top: 0; }
 .fryer-series-card-reverse .fryer-series-image { order: 2; }
 .fryer-series-card-reverse .fryer-series-copy { order: 1; }
 .fryer-series-card-reverse .fryer-product-gallery { order: 3; }
@@ -2158,9 +2189,12 @@ button {
 .kitchenware-social-row span { display: flex; flex-direction: column; gap: 3px; font-size: 10px; font-weight: 800; letter-spacing: .06em; }
 .kitchenware-social-row b { font-size: 12px; letter-spacing: 0; }
 .kitchenware-new-products { padding-top: 70px; padding-bottom: 60px; }
-.kitchenware-product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.kitchenware-product-card { overflow: hidden; border: 1px solid #e6e2dd; background: #fffefa; }
-.kitchenware-product-card-wide { grid-column: span 2; }
+.kitchenware-product-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2열(나란히 2장씩)로 변경 */
+  gap: 0px; 
+}.kitchenware-product-card { overflow: hidden; border: 1px solid #e6e2dd; background: #fffefa; }
+
 .kitchenware-product-card img { display: block; width: 100%; height: 265px; padding: 12px; object-fit: contain; background: #f7f7f4; }
 .kitchenware-product-card div { padding: 13px 16px 16px; }
 .kitchenware-product-card span { color: #8a8c84; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
@@ -2169,7 +2203,7 @@ button {
 .kitchenware-new-products .kitchenware-section-head { margin-bottom: 24px; }
 .kitchenware-nav { position: sticky; z-index: 3; top: 0; border-block: 1px solid #e5e0dc; background: rgba(255, 254, 250, .96); backdrop-filter: blur(10px); }
 .kitchenware-nav .wrap { display: flex; justify-content: center; gap: clamp(18px, 4vw, 52px); }
-.kitchenware-nav a { display: flex; min-height: 58px; align-items: center; color: #3f413e; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.kitchenware-nav a { display: flex; min-height: 58px; align-items: center; color: #3f413e; font-size: 18px; font-weight: 700; white-space: nowrap; }
 .kitchenware-nav a:hover, .kitchenware-nav a:focus-visible { color: var(--kitchenware-accent); }
 .kitchenware-catalog { padding-top: 82px; padding-bottom: 88px; scroll-margin-top: 68px; }
 .kitchenware-section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
@@ -2187,6 +2221,20 @@ button {
 .kitchenware-catalog-note p { flex: 1; margin: 0; color: #565a53; font-size: 12px; line-height: 1.8; }
 .kitchenware-catalog-note .text-link { flex: 0 0 auto; }
 .kitchenware-social { padding: 64px 0; background: #282824; color: #fffefa; }
+.kitchenware-group-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: var(--kitchenware-accent); font-size: 18px; font-weight: 800; text-decoration: none; }
+.kitchenware-group-link:hover, .kitchenware-group-link:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.kitchenware-detail-intro { padding-top: 34px; padding-bottom: 25px; }
+.kitchenware-detail-intro .detail-breadcrumb { margin-bottom: 25px; }
+.kitchenware-detail-intro h1 { margin: 10px 0 8px; font-size: clamp(34px, 4.5vw, 52px); line-height: 1.2; letter-spacing: -.07em; }
+.kitchenware-detail-intro h1 em { color: var(--kitchenware-accent); font-family: var(--serif); font-size: .7em; font-weight: 400; font-style: normal; }
+.kitchenware-detail-intro p { margin: 0; color: #68756e; font-size: 13px; }
+.kitchenware-detail-catalog { padding-top: 30px; padding-bottom: 76px; }
+.kitchenware-detail-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.kitchenware-detail-product { min-width: 0; margin: 0; overflow: hidden; border: 1px solid #e6e2dd; background: #fffefa; }
+.kitchenware-detail-product img { display: block; width: 100%; aspect-ratio: 1.35; padding: 6px; object-fit: contain; background: #f7f7f4; }
+.kitchenware-detail-product figcaption { min-height: 42px; padding: 10px 8px; color: #30322e; font-size: 12px; font-weight: 700; line-height: 1.5; text-align: center; word-break: keep-all; }
+.kitchenware-detail-page .kitchenware-nav { top: 0; }
+.kitchenware-detail-page .kitchenware-nav a[aria-current="page"] { color: var(--kitchenware-accent); }
 .kitchenware-social-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
 .kitchenware-social .eyebrow { color: #d8a59a; }
 .kitchenware-social h2 { margin: 13px 0; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.3; letter-spacing: -.06em; }
@@ -2209,6 +2257,7 @@ button {
   .kitchenware-section-head { display: block; }
   .kitchenware-section-head > p { margin-top: 13px; }
   .kitchenware-social-inner { grid-template-columns: 1fr; gap: 25px; }
+  .kitchenware-detail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
   .home-announcement { width: calc(100vw - 18px); max-height: calc(100dvh - 18px); padding: 12px; border-radius: 10px; }
@@ -2235,6 +2284,9 @@ button {
   .kitchenware-catalog-note { align-items: flex-start; flex-direction: column; gap: 10px; padding: 20px; }
   .kitchenware-social { padding: 48px 0; }
   .kitchenware-social-links { grid-template-columns: 1fr; }
+  .kitchenware-detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .kitchenware-detail-catalog { padding-top: 22px; padding-bottom: 54px; }
+  .kitchenware-detail-product figcaption { min-height: 38px; padding: 8px 5px; font-size: 11px; }
 }
 
 @media (max-width: 850px) {
@@ -2252,6 +2304,15 @@ button {
   .fryer-section-head { display: block; }
   .fryer-section-head > p { margin-top: 13px; }
   .fryer-series-card { margin-top: 18px; padding: 14px; }
+  .fryer-model-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .fryer-model-spec { padding: 9px 7px; }
+  .fryer-model-spec h4 { font-size: 12px; }
+  .fryer-model-spec table { font-size: 9px; }
+  .fryer-model-spec th, .fryer-model-spec td { padding: 6px 4px; }
+  .fryer-model-spec th small { font-size: 7px; }
+  .fryer-model-spec th { width: auto; }
+  .fryer-extra-models { margin-top: 18px; padding: 14px; }
+  
   .fryer-series-image { min-height: 0; }
   .fryer-product-gallery, .fryer-product-gallery-two { grid-template-columns: 1fr 1fr; gap: 8px; }
   .fryer-product-gallery img { height: 190px; }
@@ -2327,7 +2388,7 @@ button {
     align-items: flex-start;
     justify-content: center;
     gap: 3px;
-    font-size: 11px;
+    font-size: 18px;
   }
 
   .everzen-models {
@@ -2670,7 +2731,7 @@ button {
   border-radius: 4px;
   background: #03c75a;
   color: #fff !important;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   white-space: nowrap;
 }
@@ -2702,6 +2763,171 @@ button {
   }
 }
 
+.announcement-hide-today {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+}
 
+.announcement-hide-today input {
+    width: 15px;
+    height: 15px;
+    accent-color: #333;
+    cursor: pointer;
+}
 
+.home-announcement-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
 
+.everzen-ref1-image {
+    margin: 28px 0 0;
+    background: #fff;
+    text-align: center;
+}
+
+.everzen-ref1-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 메인 페이지 전화번호 확대 */
+.main-contact-details > strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: .02em;
+    line-height: 1.3;
+}
+
+.main-contact-details .main-mobile-number {
+    display: block;
+    margin-top: 9px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+/* 모바일 화면 */
+@media (max-width: 600px) {
+    .main-contact-details > strong {
+        font-size: 26px;
+    }
+
+    .main-contact-details .main-mobile-number {
+    font-size: 18px;    /* 모바일 기기에서는 줄바꿈 방지를 위해 18px로 최적화 */
+    margin-top: 6px;
+    }
+}
+
+/* 메인 페이지 하단 문의 영역 */
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1.2fr;
+    gap: 35px;
+    align-items: center;
+}
+
+/* 가운데 사진 */
+.contact-photo {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+        background: #f5f5f5;
+
+}
+
+.contact-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+       object-fit: contain;
+    object-position: center;
+}
+
+/* 연락처 영역 */
+.main-contact-card {
+    min-width: 0;
+    width: 100%;
+}
+
+/* 태블릿 및 모바일 */
+@media (max-width: 900px) {
+    .contact-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-copy {
+        grid-column: 1 / -1;
+    }
+
+    .contact-photo {
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-copy,
+    .contact-photo,
+    .main-contact-card {
+        grid-column: auto;
+    }
+
+    .contact-photo {
+        height: 240px;
+    }
+}
+/* 연락처 전화번호가 줄바꿈되지 않고 한 줄로 표시 */
+.main-contact-details {
+    min-width: 0;
+    width: 100%;
+}
+
+.main-contact-details > strong,
+.main-contact-details .main-mobile-number {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
+.main-contact-details > strong {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.main-contact-details .main-mobile-number {
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+/* 연락처 카드의 가로 공간 확보 */
+.main-contact-card {
+    min-width: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .main-contact-details > strong {
+        font-size: 24px;
+    }
+
+    .main-contact-details .main-mobile-number {
+        font-size: 15px;
+    }
+}

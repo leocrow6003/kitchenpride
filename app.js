@@ -140,7 +140,7 @@ if (detailRoot) {
       model: "UDS-45RFIE",
       description: "45BOX 냉장 800 L와 냉동 240 L 조합 모델입니다.",
       image: "assets/everzen-45box.jpg",
-      detailImage: "assets/45box_detail-updated.jpg",
+      detailImage: "assets/45box_detail.jpg",
       specs: [
         ["냉장 용량", "800 L"], ["냉동 용량", "240 L"],
         ["외형 크기", "1,240 × 830 × 1,960 mm"], ["중량", "149 kg"],
@@ -153,6 +153,8 @@ if (detailRoot) {
       model: "UDS-45VRFIE",
       description: "45BOX 냉장 525 L와 냉동 514 L 조합 모델입니다.",
       image: "assets/everzen-45box.jpg",
+            detailImage: "assets/45box_detail.jpg",
+
       specs: [
         ["냉장 용량", "525 L"], ["냉동 용량", "514 L"],
         ["외형 크기", "1,240 × 830 × 1,960 mm"], ["중량", "149 kg"],
@@ -165,6 +167,8 @@ if (detailRoot) {
       model: "UDS-45RIE",
       description: "45BOX 냉장 전용 모델입니다.",
       image: "assets/everzen-45box.jpg",
+            detailImage: "assets/45box_detail.jpg",
+
       specs: [
         ["냉장 용량", "1,119 L"], ["냉동 용량", "없음"],
         ["외형 크기", "1,240 × 830 × 1,960 mm"], ["중량", "149 kg"],
@@ -177,6 +181,7 @@ if (detailRoot) {
       model: "UDS-45FIE",
       description: "45BOX 냉동 전용 모델입니다.",
       image: "assets/everzen-45box.jpg",
+       detailImage: "assets/45box_detail.jpg",
       specs: [
         ["냉장 용량", "없음"], ["냉동 용량", "1,106 L"],
         ["외형 크기", "1,240 × 830 × 1,960 mm"], ["중량", "149 kg"],
@@ -350,7 +355,7 @@ if (homeAnnouncement && typeof homeAnnouncement.showModal === "function") {
       "키친프라이드의 튀김기 시리즈를 한곳에서 살펴보세요. 제품 사진과 구성은 제공된 이미지 기준으로 소개하며, 상세 사양과 모델은 상담을 통해 확인하실 수 있습니다.": "Explore the Kitchen Pride fryer range. Photos and configurations are based on the supplied images; contact us for model details and specifications.", "시리즈별 제품 이미지를 먼저 확인하고,": "Browse product photos by series,", "필요한 용량과 설치 조건은 상담으로 안내받으세요.": "then contact us about capacity and installation requirements.",
       "여러 형태의 제품 구성을 사진으로 확인해 보세요. 세부 모델과 사양은 문의 시 안내해 드립니다.": "View photos of the available configurations. Contact us for model and specification details.", "현재 보유한 프리미엄 제품 사진을 보여드립니다. 추가 사진과 실제 제품 옵션은 문의해 주세요.": "See our available Premium product photos. Contact us for additional photos and available options.", "에코 튀김기 시리즈의 제품 구성을 사진으로 확인해 보세요. 실제 제품 옵션은 별도 문의 바랍니다.": "View photos of the Eco fryer configurations. Please contact us for available product options.", "스마트 시리즈 제품군을 살펴보세요. 모델별 제어 기능과 상세 구성은 상담해 드립니다.": "Explore the Smart series. Contact us for model-specific controls and configuration details.", "터보 시리즈 제품 이미지를 확인해 보세요. 설치 환경과 사용 목적에 맞는 제품은 상담으로 안내해 드립니다.": "View Turbo series product photos. We can help select a product for your space and needs.", "자동 튀김기 제품 사진입니다. 제품 구성과 사용 환경에 맞는 상세 정보는 문의해 주세요.": "Automatic fryer product photo. Contact us for configuration details suited to your operation.",
       "주방 환경에 맞는 튀김기,": "A fryer for your kitchen,", "관심 있는 시리즈와 필요한 구성을 알려주시면 안내해 드립니다.": "Tell us which series and configuration you are interested in, and we will help.", "주방용품 한자리에서,": "Kitchenware all in one place,", "준비를 더 든든하게.": "for a more prepared kitchen.", "매일 쓰는 조리 도구부터 업소용 주방기기까지. 필요한 제품을 살펴보고, 주방 환경에 맞는 구성과 주문 제작을 상담해 보세요.": "From everyday cooking tools to commercial equipment, explore what you need and ask us about custom configurations for your kitchen.",
-      "제품군 둘러보기": "Explore categories", "주방용품·주방기기 도매": "Kitchenware and equipment wholesale", "상담·설계·주문 제작": "Consultation, design, and custom orders", "빠른 배송·A/S 안내": "Fast delivery and after-sales service", "제품 사진 보기 ↗": "View product photos ↗", "블로그 소식 보기 ↗": "Read blog updates ↗",
+      "제품군 둘러보기": "Explore categories", "주방용품·주방기기 도매": "Kitchenware and equipment wholesale", "상담·설계·주문 제작": "Consultation, design, and custom orders", "빠른 배송·A/S 안내": "Fast delivery and after-sales service", "제품 사진 보기 ↗": "View product photos ↗", "블로그 소식 보기 ↗": "Read blog updates ↗", "제품 카탈로그": "Product catalog", "사진을 확인하고 필요한 제품을 문의해 주세요.": "Browse the photos and contact us about any products you need.", "위치": "Location",
       "냉장고·냉동고 · 유리문 냉장고 · 작업대 냉장고 · 밧트 냉장고 · 토핑 냉장고 · 김치 냉장고 · 쇼케이스 · 숙성고 · 슬러시 냉장고 · 육수 냉장고 · 제빙기 · 보온고": "Refrigerators · freezers · glass-door refrigerators · refrigerated worktables · ingredient pan refrigerators · topping refrigerators · kimchi refrigerators · display cases · aging refrigerators · slush machines · broth refrigerators · ice makers · warmers",
       "하향식 로스타 · 화로식 로스타 · 가스직화그릴 로스타 · 숯·부탄 로스타 · 무연숯불 로스타 · 닭갈비 로스타 · 사각무연 로스타 · 수냉식 로스타 · 돌판 로스타 · 철판 구이기 · 업소용 인덕션 · 무연전기 로스타 · 전기 로스타 · 코팅 불판 · 계란 불판 · 쭈꾸미 철판 · 스텐 불판 · 실석쇠 · 석쇠 · 구이기 · 초벌 구이기": "Downdraft grills · brazier grills · gas flame grills · charcoal and butane grills · smokeless charcoal grills · dak-galbi grills · square smokeless grills · water-cooled grills · stone plate grills · griddles · commercial induction cooktops · smokeless electric grills · electric grills · coated grill plates · egg grill plates · webfoot octopus plates · stainless grill plates · mesh grills · grates · grills · pre-grills",
       "식기 세척기 · 싱크대·잔반처리대 · 작업대·선반 · 불판 세척기 · 튀김기 · 탁상형 튀김기 · 자동 튀김기 · 부침기 · 육절기 · 슬라이서기 · 골절기 · 민서기 · 연육기 · 칼절기 · 반죽기 · 제면기 · 냉면기 · 양념 분쇄기 · 마늘편기 · 파절기·탕파기 · 스탠믹서기 · 포장기계": "Dishwashers · sinks and food-waste stations · worktables and shelves · grill-plate washers · fryers · countertop fryers · automatic fryers · griddles · meat cutters · slicers · bone saws · meat grinders · tenderizers · knife sharpeners · dough mixers · noodle machines · cold-noodle machines · seasoning grinders · garlic slicers · scallion slicers · stand mixers · packaging machines",
@@ -425,7 +430,7 @@ if (homeAnnouncement && typeof homeAnnouncement.showModal === "function") {
       "키친프라이드의 튀김기 시리즈를 한곳에서 살펴보세요. 제품 사진과 구성은 제공된 이미지 기준으로 소개하며, 상세 사양과 모델은 상담을 통해 확인하실 수 있습니다.": "Khám phá các dòng máy chiên Kitchen Pride. Hình ảnh và cấu hình dựa trên tài liệu được cung cấp; vui lòng liên hệ để biết mẫu và thông số chi tiết.", "시리즈별 제품 이미지를 먼저 확인하고,": "Xem hình ảnh sản phẩm theo từng dòng,", "필요한 용량과 설치 조건은 상담으로 안내받으세요.": "sau đó liên hệ để được tư vấn dung tích và điều kiện lắp đặt.",
       "여러 형태의 제품 구성을 사진으로 확인해 보세요. 세부 모델과 사양은 문의 시 안내해 드립니다.": "Xem ảnh các cấu hình sản phẩm. Vui lòng liên hệ để biết mẫu và thông số chi tiết.", "현재 보유한 프리미엄 제품 사진을 보여드립니다. 추가 사진과 실제 제품 옵션은 문의해 주세요.": "Xem hình ảnh các sản phẩm Premium hiện có. Vui lòng liên hệ để biết thêm ảnh và tùy chọn.", "에코 튀김기 시리즈의 제품 구성을 사진으로 확인해 보세요. 실제 제품 옵션은 별도 문의 바랍니다.": "Xem ảnh cấu hình máy chiên Eco. Vui lòng liên hệ riêng để biết các tùy chọn thực tế.", "스마트 시리즈 제품군을 살펴보세요. 모델별 제어 기능과 상세 구성은 상담해 드립니다.": "Khám phá dòng Smart. Chúng tôi sẽ tư vấn chức năng điều khiển và cấu hình từng mẫu.", "터보 시리즈 제품 이미지를 확인해 보세요. 설치 환경과 사용 목적에 맞는 제품은 상담으로 안내해 드립니다.": "Xem hình ảnh dòng Turbo. Chúng tôi sẽ tư vấn sản phẩm phù hợp với không gian và mục đích sử dụng.", "자동 튀김기 제품 사진입니다. 제품 구성과 사용 환경에 맞는 상세 정보는 문의해 주세요.": "Hình ảnh máy chiên tự động. Vui lòng liên hệ để biết cấu hình phù hợp với nhu cầu sử dụng.",
       "주방 환경에 맞는 튀김기,": "Máy chiên phù hợp với căn bếp,", "관심 있는 시리즈와 필요한 구성을 알려주시면 안내해 드립니다.": "Hãy cho chúng tôi biết dòng sản phẩm và cấu hình bạn cần để được tư vấn.", "주방용품 한자리에서,": "Đồ dùng nhà bếp tại một nơi,", "준비를 더 든든하게.": "chuẩn bị căn bếp chu đáo hơn.", "매일 쓰는 조리 도구부터 업소용 주방기기까지. 필요한 제품을 살펴보고, 주방 환경에 맞는 구성과 주문 제작을 상담해 보세요.": "Từ dụng cụ nấu ăn hằng ngày đến thiết bị bếp công nghiệp, hãy tham khảo sản phẩm và tư vấn cấu hình hoặc đặt hàng theo nhu cầu.",
-      "제품군 둘러보기": "Xem danh mục", "주방용품·주방기기 도매": "Bán sỉ đồ dùng và thiết bị bếp", "상담·설계·주문 제작": "Tư vấn, thiết kế và đặt hàng", "빠른 배송·A/S 안내": "Giao hàng nhanh và bảo hành", "제품 사진 보기 ↗": "Xem ảnh sản phẩm ↗", "블로그 소식 보기 ↗": "Đọc tin trên blog ↗",
+      "제품군 둘러보기": "Xem danh mục", "주방용품·주방기기 도매": "Bán sỉ đồ dùng và thiết bị bếp", "상담·설계·주문 제작": "Tư vấn, thiết kế và đặt hàng", "빠른 배송·A/S 안내": "Giao hàng nhanh và bảo hành", "제품 사진 보기 ↗": "Xem ảnh sản phẩm ↗", "블로그 소식 보기 ↗": "Đọc tin trên blog ↗", "제품 카탈로그": "Danh mục sản phẩm", "사진을 확인하고 필요한 제품을 문의해 주세요.": "Xem ảnh và liên hệ với chúng tôi về sản phẩm bạn cần.", "위치": "Vị trí",
       "All rights reserved.": "Đã đăng ký bản quyền.", "키친프라이드 홈": "Trang chủ Kitchen Pride", "메뉴 열기": "Mở menu", "메뉴 닫기": "Đóng menu", "팝업 닫기": "Đóng cửa sổ"
     }
   };
@@ -437,8 +442,8 @@ if (homeAnnouncement && typeof homeAnnouncement.showModal === "function") {
     "키친프라이드 하노이 매장 구글 지도": { en: "Google map to the Kitchen Pride Hanoi store", vi: "Bản đồ Google đến cửa hàng Kitchen Pride tại Hà Nội" }
   };
   const pageTitles = {
-    en: { "키친프라이드 | 매일의 주방을 든든하게": "Kitchen Pride | Your trusted kitchen partner", "브랜드 이야기 | 키친프라이드": "Our Story | Kitchen Pride", "주방용품 | 키친프라이드": "Kitchenware | Kitchen Pride", "업소용 튀김기 | 키친프라이드": "Commercial Fryers | Kitchen Pride", "업소용 냉장고 | 키친프라이드": "Commercial Refrigerators | Kitchen Pride", "에버젠 업소용 냉장고 | 키친프라이드": "EVERZEN Commercial Refrigerators | Kitchen Pride", "제품 상세 | 키친프라이드": "Product Details | Kitchen Pride" },
-    vi: { "키친프라이드 | 매일의 주방을 든든하게": "Kitchen Pride | Đối tác tin cậy của căn bếp", "브랜드 이야기 | 키친프라이드": "Câu chuyện thương hiệu | Kitchen Pride", "주방용품 | 키친프라이드": "Đồ dùng nhà bếp | Kitchen Pride", "업소용 튀김기 | 키친프라이드": "Máy chiên công nghiệp | Kitchen Pride", "업소용 냉장고 | 키친프라이드": "Tủ lạnh công nghiệp | Kitchen Pride", "에버젠 업소용 냉장고 | 키친프라이드": "Tủ lạnh công nghiệp EVERZEN | Kitchen Pride", "제품 상세 | 키친프라이드": "Chi tiết sản phẩm | Kitchen Pride" }
+    en: { "키친프라이드 | 매일의 주방을 든든하게": "Kitchen Pride | Your trusted kitchen partner", "브랜드 이야기 | 키친프라이드": "Our Story | Kitchen Pride", "주방용품 | 키친프라이드": "Kitchenware | Kitchen Pride", "업소용 튀김기 | 키친프라이드": "Commercial Fryers | Kitchen Pride", "업소용 냉장고 | 키친프라이드": "Commercial Refrigerators | Kitchen Pride", "에버젠 업소용 냉장고 | 키친프라이드": "EVERZEN Commercial Refrigerators | Kitchen Pride", "제품 상세 | 키친프라이드": "Product Details | Kitchen Pride", "냉장·저장 | 주방용품 | 키친프라이드": "Cold Storage | Kitchenware | Kitchen Pride", "조리·구이 | 주방용품 | 키친프라이드": "Cooking & Grilling | Kitchenware | Kitchen Pride", "전처리·가공 | 주방용품 | 키친프라이드": "Preparation | Kitchenware | Kitchen Pride", "식기·냄비 | 주방용품 | 키친프라이드": "Tableware & Cookware | Kitchenware | Kitchen Pride", "도구·주방 보조 | 주방용품 | 키친프라이드": "Kitchen Tools | Kitchenware | Kitchen Pride" },
+    vi: { "키친프라이드 | 매일의 주방을 든든하게": "Kitchen Pride | Đối tác tin cậy của căn bếp", "브랜드 이야기 | 키친프라이드": "Câu chuyện thương hiệu | Kitchen Pride", "주방용품 | 키친프라이드": "Đồ dùng nhà bếp | Kitchen Pride", "업소용 튀김기 | 키친프라이드": "Máy chiên công nghiệp | Kitchen Pride", "업소용 냉장고 | 키친프라이드": "Tủ lạnh công nghiệp | Kitchen Pride", "에버젠 업소용 냉장고 | 키친프라이드": "Tủ lạnh công nghiệp EVERZEN | Kitchen Pride", "제품 상세 | 키친프라이드": "Chi tiết sản phẩm | Kitchen Pride", "냉장·저장 | 주방용품 | 키친프라이드": "Làm lạnh & bảo quản | Đồ dùng nhà bếp | Kitchen Pride", "조리·구이 | 주방용품 | 키친프라이드": "Nấu & nướng | Đồ dùng nhà bếp | Kitchen Pride", "전처리·가공 | 주방용품 | 키친프라이드": "Sơ chế & chế biến | Đồ dùng nhà bếp | Kitchen Pride", "식기·냄비 | 주방용품 | 키친프라이드": "Đồ ăn & nồi chảo | Đồ dùng nhà bếp | Kitchen Pride", "도구·주방 보조 | 주방용품 | 키친프라이드": "Dụng cụ bếp | Kitchen Pride" }
   };
 
   const languageControl = document.createElement("div");
@@ -494,4 +499,93 @@ if (homeAnnouncement && typeof homeAnnouncement.showModal === "function") {
   applyLanguage(selector.value);
 })();
 
+// ========================================
+// 홈페이지 팝업: 오늘 하루 안 보기
+// ========================================
 
+(() => {
+    const popup = document.getElementById('home-announcement');
+
+    if (!popup) return;
+
+    const checkbox = document.getElementById(
+        'announcement-hide-today'
+    );
+
+    const STORAGE_KEY = 'kitchenpride_popup_hidden_date';
+
+    // 사용자의 현지 날짜 (YYYY-MM-DD)
+    function getToday() {
+        const now = new Date();
+
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
+    }
+
+    // 오늘 이미 숨김 처리했는지 확인
+    function isHiddenToday() {
+        return localStorage.getItem(STORAGE_KEY) === getToday();
+    }
+
+    // 오늘 숨김 상태라면 팝업 표시 방지
+    const originalShowModal = popup.showModal.bind(popup);
+
+    popup.showModal = function () {
+        if (isHiddenToday()) return;
+        originalShowModal();
+    };
+
+    // 팝업 닫기 버튼 처리
+    popup.querySelectorAll('[data-announcement-close]')
+        .forEach(button => {
+            button.addEventListener('click', () => {
+
+                if (checkbox && checkbox.checked) {
+                    localStorage.setItem(
+                        STORAGE_KEY,
+                        getToday()
+                    );
+                }
+
+                popup.close();
+            });
+        });
+
+})();
+
+// ========================================
+// 음료 냉장고 / 숙성 냉장고 첫 클릭 오작동 수정 스크립트
+// ========================================
+document.addEventListener("DOMContentLoaded", () => {
+  // 메뉴 링크나 이동 버튼들이 특정 클래스나 href 속성을 가지고 있는지 확인 후 매칭
+  // 여기서는 '음료 냉장고'와 '숙성 냉장고' 섹션 이동 버튼을 타깃으로 잡습니다.
+  const navigationLinks = document.querySelectorAll('a[href^="#"]');
+
+  navigationLinks.forEach(link => {
+    link.addEventListener("click", function (event) {
+      const targetId = this.getAttribute("href");
+      
+      // 만약 빈 해시(#)이거나 페이크 링크라면 무시
+      if (targetId === "#" || targetId === "") return;
+
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        // 브라우저의 원래 불완전한 해시 이동 동작을 전면 차단합니다 (첫 클릭 오작동 방지)
+        event.preventDefault();
+
+        // 클릭된 순간, 번역이 완료된 최종 화면에서의 실시간 섹션 위치를 정확하게 계산하여 이동시킵니다.
+        targetSection.scrollIntoView({
+          behavior: "smooth", // 부드러운 스크롤 효과 적용
+          block: "start"      // 섹션의 최상단을 화면 상단에 맞춤
+        });
+        
+        // (옵션) 주소창에 해시값을 강제로 업데이트하고 싶다면 아래 코드 활성화
+        // history.pushState(null, null, targetId);
+      }
+    });
+  });
+});
